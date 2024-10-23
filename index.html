@@ -8,7 +8,7 @@
   <div id="controls">
     <label for="limit">Table limit:</label>
     <input type="number" id="limit" min="1" max="255" placeholder="Limit for table inputs">
-	<button onclick="mapCellsToGreyScale()">Apply shading of values</button>
+	<button onclick="applyGrayscale()">Apply shading of values</button>
 	<p> This tool generates a table of modular arithmetic values for the interval [limit,-limit], with a current maximum input of 255. Each cell value, is given by (row number) mod (column number)<p>
   </div>
   <div id="tableContainer"></div>
