@@ -3,7 +3,18 @@ export function generateTable (limit) {
   tableContainer.innerHTML = '';
 
   // Create the header row
-  // ... (same as before)
+  const headerRow = document.createElement('tr');
+  headerRow.classList.add('row');
+  headerRow.classList.add('index-row');
+  headerRow.innerHTML = '<th class="index-cell"></th>';
+  for (let j = limit; j >= -limit; j--) {
+    const cell = document.createElement('th');
+    cell.classList.add('cell');
+    cell.classList.add('index-column');
+    cell.textContent = j;
+    headerRow.appendChild(cell);
+  }
+  tableContainer.appendChild(headerRow);
 
   // Create the data rows
   for (let i = limit; i >= -limit; i--) {
@@ -11,7 +22,11 @@ export function generateTable (limit) {
     row.classList.add('row');
 
     // Create the index cell
-    // ... (same as before)
+    const indexCell = document.createElement('td');
+    indexCell.classList.add('cell');
+    indexCell.classList.add('index-row');
+    indexCell.textContent = i;
+    row.appendChild(indexCell);
 
     // Calculate the first cell's value
     const firstCell = document.createElement('td');
