@@ -31,12 +31,12 @@ export function generateTable (limit) {
     // Calculate the first cell's value
     const firstCell = document.createElement('td');
     firstCell.classList.add('cell');
-    firstCell.textContent = (i % -limit).toString();
+    firstCell.textContent = (i % limit).toString();
     row.appendChild(firstCell);
 
     // Calculate the remaining cells using modular arithmetic properties
-    for (let j = -limit + 1; j <= limit; j++) {
-      const previousCell = row.cells[row.cells.length - 1];
+    for (let j = limit - 1; j >= -limit; j--) {
+      const previousCell = row.cells[row.cells.length + 1];
       const newCell = document.createElement('td');
       newCell.classList.add('cell');
       newCell.textContent = (parseInt(previousCell.textContent) + j) % limit;
