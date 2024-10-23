@@ -1,4 +1,4 @@
-import {calculateModulararithmetic } from './modularArithmetic.js';
+import {calculateModularArithmetic } from './modularArithmetic.js';
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
 
