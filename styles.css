@@ -1,7 +1,3 @@
-#limit {
-padding: 10px;
-}
-
 .table {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
@@ -16,4 +12,11 @@ padding: 5px;
 
 .index-row, .index-column {
   font-weight: bold;
+}
+
+#limit {
+padding: 10px;
+}
+#placeholder {
+padding: 10px;
 }
