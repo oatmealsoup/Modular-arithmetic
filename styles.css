@@ -1,0 +1,13 @@
+#tableContainer {
+  width: 800px;
+  height: 800px;
+  overflow: auto;
+}
+
+.cell {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
