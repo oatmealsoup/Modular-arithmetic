@@ -38,4 +38,4 @@ const tableContainer = document.getElementById('tableContainer');
       row.appendChild(cell);
     }
     tableContainer.appendChild(row);
-  }
+}
