@@ -1,4 +1,4 @@
-label {
+label [type='limit'] {
   padding: 10px;
 }
 .table {
