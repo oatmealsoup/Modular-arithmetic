@@ -4,12 +4,12 @@ export function generateTable (limit) {
 
   // Pre-calculate values up to a certain limit (adjust as needed)
   const precalculatedValues = new Map();
-  for (let i = -1000; i <= 1000; i++) {
-    for (let j = -1000; j <= 1000; j++) {
+  for (let i = 1000; i >= -1000; i--) {
+    for (let j = 1000; j >= -1000; j--) {
       precalculatedValues.set(`${i}-${j}`, (i % j).toString());
     }
   }
-
+  
   // If the table exists, update it
   if (table) {
     // Update existing cells
@@ -52,7 +52,6 @@ export function generateTable (limit) {
       cell.textContent = (i % j).toString();
       row.appendChild(cell);
     }
-
     tableContainer.appendChild(row);
   }
- }
+}
