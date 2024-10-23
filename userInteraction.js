@@ -12,5 +12,3 @@ document.getElementById('limit').addEventListener('change', () => {
   const limit = parseInt(document.getElementById('limit').value);
   generateTable(limit);
 });
-
-// Add event listeners for zooming and panning
