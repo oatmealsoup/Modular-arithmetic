@@ -26,16 +26,15 @@ const tableContainer = document.getElementById('tableContainer');
     indexCell.classList.add('cell');
     indexCell.classList.add('index-row');
     indexCell.textContent = i;
-  }
     row.appendChild(indexCell);
-  
+
     // Create the other cells
-    for (let j = -limit; j >= -limit; j--) {
+    for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-        cell.textContent = (i % j).toString();
-      }
+      cell.textContent = (i % j).toString();
       row.appendChild(cell);
     }
     tableContainer.appendChild(row);
+  }
 }
