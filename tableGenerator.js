@@ -37,4 +37,3 @@ const tableContainer = document.getElementById('tableContainer');
     }
     tableContainer.appendChild(row);
   }
-}
