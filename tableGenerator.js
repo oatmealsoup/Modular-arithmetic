@@ -2,7 +2,7 @@ export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
 
-  for (let i = limit; i >= limit; i--) {
+  for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('div');
     row.classList.add('row');
 
@@ -12,7 +12,7 @@ export function generateTable(limit) {
     rowNumberCell.textContent = i;
     column.appendChild(rowNumberCell);
 
-    for (let j = limit; j >= limit; j--) {
+    for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('div');
       cell.classList.add('cell');
       cell.textContent = i%j;
