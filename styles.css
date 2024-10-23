@@ -1,16 +1,17 @@
-div [id='limit'] {
-  padding: 10px;
+#limit {
+padding: 10px;
 }
+
 .table {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  grid-gap: 5px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+grid-gap: 5px;
 }
 
 .cell {
-  text-align: center;
-  border: 1px solid black;
-  padding: 5px;
+text-align: center;
+border: 1px solid black;
+padding: 5px;
 }
 
 .index-row, .index-column {
