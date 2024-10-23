@@ -37,11 +37,13 @@ export function generateTable (limit) {
     row.appendChild(indexCell);
 
     // Use the pre-calculated values
-    for (let j = -limit; j <= limit; j++) {
+    for (let i = limit; i>= -limit; i--){
+      for (let j = limit; j >= -limit; j--){
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = precalculatedValues.get(`${i}-${j}`);
       row.appendChild(cell);
+      }
     }
 
     tableContainer.appendChild(row);
