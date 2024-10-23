@@ -7,7 +7,7 @@ export function generateTable (limit) {
   headerRow.classList.add('row');
   headerRow.classList.add('index-row');
   headerRow.innerHTML = '<th class="index-cell"></th>';
-  for (let j = -limit; j <= limit; j++) {
+  for (let j = limit; j >= -limit; j--) {
     const cell = document.createElement('th');
     cell.classList.add('cell');
     cell.classList.add('index-column');
@@ -16,8 +16,8 @@ export function generateTable (limit) {
   }
   tableContainer.appendChild(headerRow);
 
-  // Create the data rows
-  for (let i = -limit; i <= limit; i++) {
+  // Create the index rows
+  for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
     row.classList.add('row');
 
@@ -28,8 +28,8 @@ export function generateTable (limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create the other cells
-    for (let j = -limit; j <= limit; j++) {
+    // Generate the other cells
+    for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
