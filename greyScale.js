@@ -1,4 +1,4 @@
-export function mapValueToGrayScale(value) {
+function mapValueToGrayScale(value) {
   const absoluteValue = Math.abs(value);
   const hexValue = absoluteValue.toString(16).padStart(2, '0');
 
