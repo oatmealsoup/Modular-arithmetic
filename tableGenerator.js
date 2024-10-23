@@ -7,7 +7,7 @@ export function generateTable(limit) {
     for (let j = -limit; j <= limit; j++) {
       const cell = document.createElement('div');
       cell.classList.add('cell');
-      cell.textContent = i % j;
+      cell.textContent = i%j;
       row.appendChild(cell);
     }
     tableContainer.appendChild(row);
