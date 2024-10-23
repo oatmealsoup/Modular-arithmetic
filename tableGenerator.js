@@ -1,8 +1,8 @@
 export function generateTable (limit) {
   // Pre-calculate values up to 1000
   const precalculatedValues = new Map();
-  for (let i = -1000; i <= 1000; i++) {
-    for (let j = -1000; j <= 1000; j++) {
+  for (let i = 1000; i >= -1000; --) {
+    for (let j = 1000; j >= -1000; j--) {
       precalculatedValues.set(`${i}-${j}`, (i % j).toString());
     }
   }
