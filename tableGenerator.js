@@ -1,25 +1,8 @@
 export function generateTable (limit) {
   const tableContainer = document.getElementById('tableContainer');
-  const table = tableContainer.querySelector('table');
+  tableContainer.innerHTML = '';
 
-  // Pre-calculate values up to a certain limit (adjust as needed)
-  const precalculatedValues = new Map();
-  for (let i = 1000; i >= -1000; i--) {
-    for (let j = 1000; j >= -1000; j--) {
-      precalculatedValues.set(`${i}-${j}`, (i % j).toString());
-    }
-  }
-  
-  // If the table exists, update it
-  if (table) {
-    // Update existing cells
-    for (let i = -limit; i <= limit; i++) {
-      const row = table.rows[i + limit + 1]; // Adjust index based on header row
-      for (let j = -limit; j <= limit; j++) {
-        const cell = row.cells[j + limit + 1];
-        cell.textContent = precalculatedValues.get(`${i}-${j}`);
-  } else {
-// Create the header row
+  // Create the header row
   const headerRow = document.createElement('tr');
   headerRow.classList.add('row');
   headerRow.classList.add('index-row');
