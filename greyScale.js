@@ -11,7 +11,7 @@ function mapValueToGrayScale(value) {
   }
 }
 
-function applyGrayscale() {
+export function applyGrayscale() {
   const cells = document.querySelectorAll('table td');
   cells.forEach((cell) => {
     const value = parseInt(cell.textContent);
