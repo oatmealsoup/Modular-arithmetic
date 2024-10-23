@@ -26,8 +26,9 @@ const tableContainer = document.getElementById('tableContainer');
     indexCell.classList.add('cell');
     indexCell.classList.add('index-row');
     indexCell.textContent = i;
+  }
     row.appendChild(indexCell);
-
+  
     // Create the other cells
     for (let j = -limit; j >= -limit; j--) {
       const cell = document.createElement('td');
