@@ -1,5 +1,5 @@
 export function generateTable (limit) {
- const tableContainer = document.getElementById('tableContainer');
+const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
 
   // Create the header row
@@ -7,7 +7,7 @@ export function generateTable (limit) {
   headerRow.classList.add('row');
   headerRow.classList.add('index-row');
   headerRow.innerHTML = '<th class="index-cell"></th>';
-  for (let j = limit; j >= 0-limit; j--) {
+  for (let j = -limit; j <= limit; j++) {
     const cell = document.createElement('th');
     cell.classList.add('cell');
     cell.classList.add('index-column');
@@ -16,8 +16,8 @@ export function generateTable (limit) {
   }
   tableContainer.appendChild(headerRow);
 
-  // Create the index rows
-  for (let i = limit; i >= 0-limit; i--) {
+  // Create the data rows
+  for (let i = -limit; i <= limit; i++) {
     const row = document.createElement('tr');
     row.classList.add('row');
 
@@ -28,14 +28,17 @@ export function generateTable (limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Generate the other cells
-    for (let j = limit; j >= 0-limit; j--) {
+    // Create the other cells
+    for (let j = -limit; j <= limit; j++) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-      cell.textContent = (i % j).toString();
+      if (i === 0 && j === 0) {
+        cell.textContent = 'a, b';
+      } else {
+        cell.textContent = (i % j).toString();
+      }
       row.appendChild(cell);
     }
-
     tableContainer.appendChild(row);
   }
 }
