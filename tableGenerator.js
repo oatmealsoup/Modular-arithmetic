@@ -28,19 +28,12 @@ export function generateTable (limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Calculate the first cell's value
-    const firstCell = document.createElement('td');
-    firstCell.classList.add('cell');
-    firstCell.textContent = (i % limit).toString();
-    row.appendChild(firstCell);
-
-    // Calculate the remaining cells using modular arithmetic properties
-    for (let j = limit - 1; j >= -limit; j--) {
-      const previousCell = row.cells[row.cells.length + 1];
-      const newCell = document.createElement('td');
-      newCell.classList.add('cell');
-      newCell.textContent = (parseInt(previousCell.textContent) + j) % limit;
-      row.appendChild(newCell);
+    // Create the other cells
+    for (let j = limit; j >= -limit; j--) {
+      const cell = document.createElement('td');
+      cell.classList.add('cell');
+      cell.textContent = (i % j).toString();
+      row.appendChild(cell);
     }
 
     tableContainer.appendChild(row);
