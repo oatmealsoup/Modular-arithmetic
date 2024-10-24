@@ -1,4 +1,5 @@
 import { generateTable } from './tableGenerator.js';
+import { greyScale } from './tableGenerator.js';
 function handleZoom(event) {
   // Implement zooming logic here
 }
