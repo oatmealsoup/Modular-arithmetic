@@ -1,22 +1,22 @@
-function mapValueToGrayScale(value) {
-  const absoluteValue = Math.abs(value);
-  const hexValue = absoluteValue.toString(16).padStart(2, '0');
-
-  // Invert the scale if the value is negative
-  if (value < 0) {
-    const invertedHexValue = (255 - absoluteValue).toString(16).padStart(2, '0');
-    return `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
-  } else {
-    return `#${hexValue}${hexValue}${hexValue}`;
-  }
-}
-
-export function applyGrayscale() {
+export function grayScale() {
   const cells = document.querySelectorAll('table td');
+  
   cells.forEach((cell) => {
-    const value = parseInt(cell.textContent);
-    const color = mapValueToGrayScale(value);
-    cell.style.backgroundColor = color;
-	cell.style.textColor = 'orange';
+    const integer = parseInt(cell.textContent);
+	  if (isNaN(number)) {
+        cell.style.backgroundColor = 'red';
+        return;
+      }
+	const natural = Math.abs(integer);
+	const hex = natural.toString(16).padStart(2, '0');
+	const invertedHex = (255 - natural).toString(16).padStart(2, '0');
+	if (integer > 0){
+		cell.style.backgroundColor = #${hex};
+	}
+	if (integer < 0){
+	cell.style.backgroundColor = #${invertedHex};
+	}
+    else 
+	cell.style.backgroundColor = 'yellow';
   });
 }
