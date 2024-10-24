@@ -1,4 +1,4 @@
-export function grayScale() {
+function grayScale() {
   const cells = document.querySelectorAll('table td');
   
   cells.forEach((cell) => {
