@@ -46,7 +46,6 @@ export function generateTable(limit) {
 
       row.appendChild(cell);
     }
-
     tableContainer.appendChild(row);
   }
 }
