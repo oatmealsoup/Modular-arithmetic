@@ -1,4 +1,6 @@
-export function generateTable (limit) {
+import { mapValueToGrayScale } from './grayScale.js';
+
+export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
 
@@ -33,8 +35,18 @@ export function generateTable (limit) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
+
+      // Apply grayscale color and text color
+      const value = parseInt(cell.textContent);
+      const color = mapValueToGrayScale(value);
+      cell.style.backgroundColor = color;
+
+      // Set text color to inverted hex value
+      cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
+
       row.appendChild(cell);
     }
+
     tableContainer.appendChild(row);
   }
 }
