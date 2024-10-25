@@ -34,36 +34,27 @@ export function generateTable(limit) {
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
 
-      //greyScale function
-      function grayScale(value) {
-  if (isNaN(value)) {
-    return '#ff0000'; // NaN is red
-  }
-
-  const absoluteValue = Math.abs(value);
-
-  if (absoluteValue === 0) {
-    return '#000000'; // 0 is black
-  }
-
-  const hexValue = absoluteValue.toString(16).padStart(2, '0');
-
-  // Invert the scale if the value is negative
-  if (value < 0) {
-    const invertedHexValue = (255 - absoluteValue).toString(16).padStart(2, '0');
-    return `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
-  } else {
-    return `#${hexValue}${hexValue}${hexValue}`;
-  }
+      // Apply grayscale color and text color
       const value = parseInt(cell.textContent);
-      const color = grayScale(value);
-      cell.style.backgroundColor = color;
 
-      // Set text color to inverted hex value
-      cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
+      // Handle NaN and 0
+      if (isNaN(value)) {
+        cell.style.backgroundColor = '#ff0000'; // NaN is red
+        cell.style.color = '#000000'; // Black text for NaN
+      } else if (value === 0) {
+        cell.style.backgroundColor = '#000000'; // 0 is black
+        cell.style.color = '#ffffff'; // White text for 0
+      } else {
+        const hexValue = Math.abs(value).toString(16).padStart(2, '0');
+        const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
+
+        cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
+        cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
+      }
 
       row.appendChild(cell);
     }
+
     tableContainer.appendChild(row);
   }
 }
