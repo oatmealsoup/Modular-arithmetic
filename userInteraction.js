@@ -1,13 +1,16 @@
 import { generateTable } from './tableGenerator.js';
 
+document.getElementById('limit').addEventListener('change', () => {
+  const limit = parseInt(document.getElementById('limit').value);
+  generateTable(limit);
+});
+
 function adjustPageSize() {
   const tableHeight = document.getElementById('tableContainer').offsetHeight;
   const tableWidth = document.getElementById('tableContainer').offsetWidth;
-
   document.body.style.minHeight = `${tableHeight}px`;
   document.body.style.minWidth = `${tableWidth}px`;
 }
-
-// Initial call to generate the table and adjust the page size
-generateTable(50); // Replace 10 with your desired initial limit
 adjustPageSize();
+
+
