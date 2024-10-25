@@ -49,10 +49,10 @@ export function generateTable(limit) {
         else if (174 >= value >= 80) { 
         cell.style.color = '#ffffff'; // White text for 0
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
-      }else {
+      } 
+        else {
         const hexValue = Math.abs(value).toString(16).padStart(2, '0');
         const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
-
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
       }
