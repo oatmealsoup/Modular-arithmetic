@@ -1,7 +1,7 @@
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
-
+  
   // Create the table structure
   const table = document.createElement('table');
   tableContainer.appendChild(table);
@@ -10,17 +10,16 @@ export function generateTable(limit) {
   const headerRow = document.createElement('tr');
   table.appendChild(headerRow);
 
-  // Create header cells
+  // Create header index
   for (let j = limit; j >= -limit; j--) {
     const cell = document.createElement('th');
     cell.classList.add('cell');
     cell.classList.add('index-column');
     cell.textContent = j;
     headerRow.appendChild(cell);
-  }
 
   // Create the data rows
-  for (let i = limit; i >= -limit; i++) {
+  for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
     table.appendChild(row);
     
@@ -31,20 +30,15 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create the other cells
+    // Create the modular cells
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
 
       // Apply grayscale color and inversed text color
-      const value = Math.abs(parseInt(cell.textContent));
-    if (isNaN(value)) {
-        cell.style.backgroundColor = '#ff0000';
-  else if (value === 0) {
-        cell.style.backgroundColor = '#000000';
-        cell.style.color = '#ffffff';
-  }
+  const value = Math.abs(parseInt(cell.textContent));
+  if (isNaN(value)) {
   else {
         const hexValue = value.toString(16).padStart(2, '0');
         const invertedHexValue = (255 - value).toString(16).padStart(2, '0');
