@@ -20,7 +20,7 @@ export function generateTable(limit) {
   }
 
   // Create data rows
-  for (let i = limit; i >= -limit; i++) {
+  for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
     table.appendChild(row);
 
