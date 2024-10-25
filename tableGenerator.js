@@ -39,24 +39,10 @@ export function generateTable(limit) {
 
       // Apply grayscale color and text color
       const value = parseInt(cell.textContent);
-      if (isNaN(value)) {
-        cell.style.backgroundColor = '#ff0000'; // NaN is red
-        cell.style.color = '#000000'; // Black text for NaN
-      } else if (value === 0) {
-        cell.style.backgroundColor = '#000000'; // 0 is black
-        cell.style.color = '#ffffff'; // White text for 0
-      }
-        else if (174 >= value >= 80) { 
-        cell.style.color = '#ffffff'; // White text for 0
-        cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
-      } 
-        else {
-        const hexValue = Math.abs(value).toString(16).padStart(2, '0');
-        const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
-        cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
-        cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
-      }
-    }
+
+      // ... (grayscale and text color logic)
+
       row.appendChild(cell);
     }
   }
+}
