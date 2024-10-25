@@ -51,10 +51,11 @@ export function generateTable(limit) {
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
   }
-    }
+  }
     //Removes invisible text around 128 due to hexValue being visually similar to inverseHexValue
    if (174 >= value >= 80){
       cell.style.color = white;
+   }
    }
       row.appendChild(cell);
     }
