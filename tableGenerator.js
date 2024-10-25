@@ -6,15 +6,31 @@ export function generateTable(limit) {
   const table = document.createElement('table');
   tableContainer.appendChild(table);
 
-  // Function to generate color based on a value within the limit
-  function getColor(value) {
+  // Function to generate background color based on a value within the limit
+  function backgroundColor(value, limit) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
       return '#ff0000'; // NaN is red
     } else if (absValue === 0) {
       return '#000000'; // 0 is black
-    } else {
+    }
+      const hexValue = (limit - absValue).toString(16).padStart(2, '0');
+      return `#${hexValue}${hexValue}${hexValue}`;
+    }
+  }
+
+  // Function to generate text color based on a value within the limit
+  function textColor(value, limit) {
+    const absValue = Math.abs(value);
+    if (isNaN(absValue)) {
+      return '#ffffff'; // NaN text is White
+    } else if (absValue === 0) {
+      return '#ffffff'; // 0's text is white
+      else if (174 > absValue > 80)
+      return '#ffffff';
+    }
       const hexValue = absValue.toString(16).padStart(2, '0');
+      const invertedHexValue = (absValue-255).toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
     }
   }
@@ -52,8 +68,12 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
 
       // Apply color directly using getColor function
-      cell.style.backgroundColor = getColor(parseInt(cell.textContent));
-      cell.style.color = getColor(255-parseInt(cell.textContent));
+      absValue = Math.abs(cell.textContent)
+      cell.style.backgroundColor = getColor(limit - absValue);
+      if (174 >absvalue>80 (
+      cell.stlye.color = 
+      cell.style.color = getColor( limit- absValue);
+    }
       row.appendChild(cell);
     }
   }
