@@ -69,10 +69,8 @@ export function generateTable(limit) {
 
       // Apply color directly using getColor function
       absValue = Math.abs(cell.textContent)
-      cell.style.backgroundColor = getColor(limit - absValue);
-      if (174 >absvalue>80 (
-      cell.stlye.color = 
-      cell.style.color = getColor( limit- absValue);
+      cell.style.backgroundColor = backgroundColor(absValue)
+      cell.style.color = textColor(absValue);
     }
       row.appendChild(cell);
     }
