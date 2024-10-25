@@ -45,8 +45,6 @@ export function generateTable(limit) {
         cell.style.backgroundColor = '#000000';
         cell.style.color = '#ffffff';
   }
-  else if (174>=value>=80){
-      cell.style.color = white;
   } else {
         const hexValue = value.toString(16).padStart(2, '0');
         const invertedHexValue = (255 - value).toString(16).padStart(2, '0');
@@ -54,6 +52,10 @@ export function generateTable(limit) {
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
   }
     }
+  //Removes invisible text around 128
+   if (174>=value>=80){
+      cell.style.color = white;
+    
       row.appendChild(cell);
     }
   }
