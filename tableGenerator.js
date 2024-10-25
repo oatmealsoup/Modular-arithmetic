@@ -60,4 +60,3 @@ export function generateTable(limit) {
       row.appendChild(cell);
     }
   }
-}
