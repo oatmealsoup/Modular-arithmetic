@@ -38,7 +38,8 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
 
       // Apply grayscale color and text color
-      const value = Math.abs(parseInt(cell.textContent));
+      const int = parseInt(cell.textContent)
+      const value = Math.abs(int);
 
       if (isNaN(value)) {
         cell.style.backgroundColor = '#ff0000';
