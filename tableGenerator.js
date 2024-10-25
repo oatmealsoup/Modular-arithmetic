@@ -17,7 +17,8 @@ export function generateTable(limit) {
     cell.classList.add('index-column');
     cell.textContent = j;
     headerRow.appendChild(cell);
-
+  }
+  
   // Create the data rows
   for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
