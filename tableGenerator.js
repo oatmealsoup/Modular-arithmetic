@@ -41,16 +41,33 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create modular cells with color
+    // Create modular cells with shading
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
-      cell.classList.add('cell');
+      cell.classList.aadd('cell');
       cell.textContent = (i % j).toString();
+      abs = Math.abs( i % j )
+       if (isNaN( i % j )) {
+    cell.backgroundColor = '#ff0000'; // NaN is red
+  }
 
-      // Apply color based on the value
-      cell.style.backgroundColor = getColor(i % j);
+  var absoluteValue = Math.abs( i % j);
 
+  if (absoluteValue === 0) {
+    return '#000000'; // 0 is black
+  }
+
+  const hexValue = absoluteValue.toString(16).padStart(2, '0');
+
+  // Invert the scale if the value is negative
+  if (value < 0) {
+    const invertedHexValue = (255 - absoluteValue).toString(16).padStart(2, '0');
+    cell.bakgroundColor = 'invertedHexValue' ;
+   } else {
+    cell.backgroundColor = 'hexValue';
+   }
+   )        
       row.appendChild(cell);
-    }
+   }
   }
 }
