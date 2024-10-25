@@ -45,7 +45,8 @@ export function generateTable(limit) {
       } else if (value === 0) {
         cell.style.backgroundColor = '#000000'; // 0 is black
         cell.style.color = '#ffffff'; // White text for 0
-        else if (128 >= value >= 80) { 
+      }
+        else if (174 >= value >= 80) { 
         cell.style.color = '#ffffff'; // White text for 0
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
       }
