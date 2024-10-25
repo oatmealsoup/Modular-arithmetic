@@ -43,7 +43,7 @@ export function generateTable(limit) {
         cell.style.backgroundColor = '#ff0000';
   } else if (value === 0) {
         cell.style.backgroundColor = '#000000';
-        cell.style.color = #ffffff;
+        cell.style.color = '#ffffff';
   } else {
         const hexValue = Math.abs(value).toString(16).padStart(2, '0');
         const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
