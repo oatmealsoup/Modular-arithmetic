@@ -23,7 +23,7 @@ export function generateTable(limit) {
   for (let i = limit; i >= -limit; i++) {
     const row = document.createElement('tr');
     table.appendChild(row);
-
+    
     // Create the index cell
     const indexCell = document.createElement('td');
     indexCell.classList.add('cell');
@@ -37,7 +37,7 @@ export function generateTable(limit) {
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
 
-      // Apply grayscale color and text color
+      // Apply grayscale color and inversed text color
       const value = Math.abs(parseInt(cell.textContent));
     if (isNaN(value)) {
         cell.style.backgroundColor = '#ff0000';
@@ -45,17 +45,17 @@ export function generateTable(limit) {
         cell.style.backgroundColor = '#000000';
         cell.style.color = '#ffffff';
   }
-  } else {
+  else {
         const hexValue = value.toString(16).padStart(2, '0');
         const invertedHexValue = (255 - value).toString(16).padStart(2, '0');
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
   }
     }
-  //Removes invisible text around 128
-   if (174>=value>=80){
+    //Removes invisible text around 128 due to hexValue being visually similar to inverseHexValue
+   if (174 >= value >= 80){
       cell.style.color = white;
-    
+   }
       row.appendChild(cell);
     }
   }
