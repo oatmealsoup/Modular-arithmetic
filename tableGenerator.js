@@ -6,7 +6,7 @@ export function generateTable(limit) {
   const table = document.createElement('table');
   tableContainer.appendChild(table);
 
-  // Function to generate color based on value within the limit
+  // Function to generate color based on a value within the limit
   function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
@@ -19,8 +19,9 @@ export function generateTable(limit) {
     }
   }
 
-  // Create the header row
+  // Create the header row with unique styling
   const headerRow = document.createElement('tr');
+  headerRow.classList.add('header-row'); // Add a specific class for styling
   table.appendChild(headerRow);
 
   // Create header cells
@@ -32,10 +33,10 @@ export function generateTable(limit) {
     headerRow.appendChild(cell);
   }
 
-  // Create data rows (avoid unnecessary re-creation)
-  let fragment = document.createDocumentFragment();
+  // Create data rows
   for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
+    table.appendChild(row);
 
     // Create index cell
     const indexCell = document.createElement('td');
@@ -55,10 +56,5 @@ export function generateTable(limit) {
 
       row.appendChild(cell);
     }
-
-    fragment.appendChild(row);
   }
-
-  // Append all rows at once for performance improvement
-  table.appendChild(fragment);
 }
