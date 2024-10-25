@@ -47,7 +47,7 @@ export function generateTable(limit) {
         cell.style.color = '#ffffff'; // White text for 0
         else if (128 >= value >= 80) { 
         cell.style.color = '#ffffff'; // White text for 0
-        cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`
+        cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
       }
       } else {
         const hexValue = Math.abs(value).toString(16).padStart(2, '0');
