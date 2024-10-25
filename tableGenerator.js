@@ -56,7 +56,7 @@ export function generateTable(limit) {
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
       }
-
+    }
       row.appendChild(cell);
     }
   }
