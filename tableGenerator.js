@@ -51,7 +51,7 @@ export function generateTable(limit) {
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
   }
-    if (174>=value>=80)
+    if (174>=value>=80){
       cell.style.color = white;
   }
       row.appendChild(cell);
