@@ -11,9 +11,21 @@ padding: 5px;
 
 .index-row, .index-column {
   font-weight: bold;
+  text-color: 
 }
 
 input[type="number"] {
   width: 100%;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#tableContainer {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
