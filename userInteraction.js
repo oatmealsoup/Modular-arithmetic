@@ -9,6 +9,5 @@ function adjustPageSize() {
 }
 
 // Initial call to generate the table and adjust the page size
-generateTable(10); // Replace 10 with your desired initial limit
+generateTable(50); // Replace 10 with your desired initial limit
 adjustPageSize();
-});
