@@ -40,11 +40,10 @@ export function generateTable(limit) {
       // Apply grayscale color and text color
       const value = parseInt(cell.textContent);
     if (isNaN(value)) {
-        cell.style.backgroundColor = '#ff0000'; // NaN is red
-        cell.style.color = black;
+        cell.style.backgroundColor = '#ff0000';
   } else if (value === 0) {
-        cell.style.backgroundColor = '#000000'; // 0 is black
-        cell.style.color = white;
+        cell.style.backgroundColor = '#000000';
+        cell.style.color = #ffffff;
   } else {
         const hexValue = Math.abs(value).toString(16).padStart(2, '0');
         const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
