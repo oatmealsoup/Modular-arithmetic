@@ -38,21 +38,22 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
 
       // Apply grayscale color and text color
-      const value = parseInt(cell.textContent);
+      const value = Math.abs(parseInt(cell.textContent));
     if (isNaN(value)) {
         cell.style.backgroundColor = '#ff0000';
-  } else if (value === 0) {
+  else if (value === 0) {
         cell.style.backgroundColor = '#000000';
         cell.style.color = '#ffffff';
+  }
+  else if (174>=value>=80){
+      cell.style.color = white;
   } else {
         const hexValue = Math.abs(value).toString(16).padStart(2, '0');
         const invertedHexValue = (255 - Math.abs(value)).toString(16).padStart(2, '0');
         cell.style.backgroundColor = `#${hexValue}${hexValue}${hexValue}`;
         cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
   }
-    if (174>=value>=80){
-      cell.style.color = white;
-  }
+    }
       row.appendChild(cell);
     }
   }
