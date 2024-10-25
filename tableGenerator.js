@@ -53,7 +53,7 @@ export function generateTable(limit) {
 
       // Apply color directly using getColor function
       cell.style.backgroundColor = getColor(parseInt(cell.textContent));
-
+      cell.style.color = getColor(parseInt(cell.textContent));
       row.appendChild(cell);
     }
   }
