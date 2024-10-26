@@ -26,7 +26,7 @@ export function generateTable(limit) {
       return '#ffffff'; // NaN text is White
     } else if (absValue === 0) {
       return '#ffffff'; // 0's text is white
-      else if (174 > absValue > 80)
+    } else if (174 > absValue > 80){
       return '#ffffff';
     }
       const hexValue = absValue.toString(16).padStart(2, '0');
