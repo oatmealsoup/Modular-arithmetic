@@ -15,12 +15,13 @@ export function generateTable(limit) {
     headerRow.appendChild(cell);
   }
   tableContainer.appendChild(headerRow);
-
+  }
   // Create the data rows
   for (let i = limit; i >= -limit; i--) {
+	  if (i!==0) {
     const row = document.createElement('tr');
     row.classList.add('row');
-
+		  
     // Create the index cell
     const indexCell = document.createElement('td');
     indexCell.classList.add('cell');
@@ -30,7 +31,7 @@ export function generateTable(limit) {
 
     // Create the other cells
     for (let i = limit; i >= -limit; i--) {
-	if ( i !== 0) {
+	if (i !== 0) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (j % i).toString();
@@ -38,14 +39,9 @@ export function generateTable(limit) {
 	  
     // Get shade from value up 255.
   function getColor(value) {
-    const absValue = Math.abs(value);
-    if (isNaN(absValue)) {
-      return '#ff0000';
-    } else if (absValue === 0) {
-      return '#0000ff';
-    } else {
-      const hexValue = absValue.toString(16).padStart(2, '0');
-      return `#${hexValue}${hexValue}${hexValue}`;
+    	const absValue = Math.abs(value);
+	const hexValue = absValue.toString(16).padStart(2, '0');
+	return `#${hexValue}${hexValue}${hexValue}`;
     }
   }
 
