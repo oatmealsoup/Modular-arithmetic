@@ -34,7 +34,7 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
 	  
     // Shading function
-  function getBackgroundColor(value) {
+  function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
       return '#ff0000'; // NaN is red
@@ -47,9 +47,9 @@ export function generateTable(limit) {
   }
 
 
-      // Apply grayscale color and text color
+      // Apply grayscale color to background
       const value = parseInt(cell.textContent);
-      const color = mapValueToGrayScale(value);
+      const color = getColor(value);
       cell.style.backgroundColor = color;
 
       // Set text color to orange
