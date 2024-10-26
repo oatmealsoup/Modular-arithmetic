@@ -33,13 +33,13 @@ export function generateTable(limit) {
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
 	  
-    // Shading function
+    // Get shade from value up 255.
   function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
-      return '#ff0000'; // NaN is red
+      return '#ff0000';
     } else if (absValue === 0) {
-      return '#000000'; // 0 is black
+      return 'blue';
     } else {
       const hexValue = absValue.toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
