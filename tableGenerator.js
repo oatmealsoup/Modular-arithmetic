@@ -31,7 +31,12 @@ export function generateTable(limit) {
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-      cell.textContent = (i % j).toString();
+	    if (j = 0) {
+	cell.textcontent = "NaN";
+	    }
+	else {    
+      cell.textContent = (j % i).toString();
+	}
 	  
     // Get shade from value up 255.
   function getColor(value) {
