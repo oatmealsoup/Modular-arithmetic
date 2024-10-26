@@ -7,6 +7,7 @@ export function generateTable(limit) {
   headerRow.classList.add('row');
   headerRow.innerHTML = '<th class="index-cell"></th>';
   for (let j = limit; j >= -limit; j--) {
+	if ( j!== 0) {
     const cell = document.createElement('th');
     cell.classList.add('cell');
     cell.classList.add('index-column');
@@ -28,13 +29,10 @@ export function generateTable(limit) {
     row.appendChild(indexCell);
 
     // Create the other cells
-    for (let j = limit; j >= -limit; j--) {
+    for (let i = limit; i >= -limit; i--) {
+	if ( i !== 0) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-	    if (j === 0) {
-	cell.textcontent = "NaN";
-	    }
-	else {    
       cell.textContent = (j % i).toString();
 	}
 	  
