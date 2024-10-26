@@ -60,18 +60,15 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create modular cells
+    // Create modular cells with shading
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
-
-      // Apply color directly using getColor function
-      absValue = Math.abs(i % j)
-      cell.style.backgroundColor = backgroundColor(absValue)
-      cell.style.color = textColor(absValue);
+      value = Math.abs(i % j)
+      cell.style.backgroundColor = backgroundColor(value)
+      cell.style.color = textColor(value);
     }
       row.appendChild(cell);
     }
   }
-}
