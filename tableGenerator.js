@@ -1,4 +1,4 @@
-function generateTable(limit) {
+export function generateTable(limit) {
   const tableData = [];
 
   for (let i = limit; i >= -limit; i--) {
