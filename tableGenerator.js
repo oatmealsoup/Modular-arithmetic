@@ -64,9 +64,8 @@ export function generateTable(limit) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
-      value = Math.abs(i % j)
-      cell.style.backgroundColor = backgroundColor(value)
-      cell.style.color = textColor(value);
+      cell.style.backgroundColor = backgroundColor(i % j, limit)
+      cell.style.color = textColor(i % j, limit);
     }
       row.appendChild(cell);
     }
