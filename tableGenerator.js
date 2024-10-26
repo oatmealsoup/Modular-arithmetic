@@ -16,9 +16,7 @@ export function generateTable(limit) {
     cell.classList.add('bold-header');
     cell.textContent = j;
     }
-     headerRow.appendChild(cell);
-  }
-
+  headerRow.appendChild(cell);
   table.appendChild(headerRow);
 
   // Create the data rows
@@ -43,7 +41,7 @@ export function generateTable(limit) {
       }
       row.appendChild(cell);
       table.appendChild(row);
-    }
-  tableContainer.appendChild(table);
+}
+tableContainer.appendChild(table);
 }
 
