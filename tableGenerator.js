@@ -33,7 +33,6 @@ export function generateTable(limit) {
       const invertedHexValue = (absValue-255).toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
     }
-  }
 
   // Create the header row with unique styling
   const headerRow = document.createElement('tr');
@@ -61,14 +60,14 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create modular cells with shading
+    // Create modular cells
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       cell.textContent = (i % j).toString();
 
       // Apply color directly using getColor function
-      absValue = Math.abs(cell.textContent)
+      absValue = Math.abs(i % j)
       cell.style.backgroundColor = backgroundColor(absValue)
       cell.style.color = textColor(absValue);
     }
