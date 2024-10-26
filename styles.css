@@ -12,7 +12,7 @@ html, body {
   border-collapse: collapse;
 }
 
-.bold-header, .indexCell {
+.index-column, .index-row {
   font-weight: bold;
 }
 
