@@ -1,11 +1,8 @@
-function generateTable(limit) {
+export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
-
   const table = document.createElement('table');   
-
-  const fragment = document.createDocumentFragment();
-
+  
   // Create the header row
   const headerRow = document.createElement('tr');
   headerRow.classList.add('row');
@@ -40,10 +37,7 @@ function generateTable(limit) {
       cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
       cell.style.color = '#0000ff';
       row.appendChild(cell);
-    }
-    fragment.appendChild(row);
   }
-
-  table.appendChild(fragment);
+  }
   tableContainer.appendChild(table);
 }
