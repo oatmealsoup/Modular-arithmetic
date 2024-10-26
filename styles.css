@@ -10,24 +10,16 @@ html, body {
 
 .table {
   display: grid;
+  table-layout: fixed;
   grid-gap: 5px;
   width: 100%;
   border-collapse: collapse;
 }
 
-.cell {
+.td, .th {
 text-align: center;
-border: 1px solid black;
-padding: 5px;
 }
 
 .index-row, .index-column {
   font-weight: bold;
-  text-color: 
 }
-
-input[type="number"] {
-  width: 100%;
-  box-sizing: border-box;
-}
-
