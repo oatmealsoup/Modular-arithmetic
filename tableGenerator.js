@@ -11,13 +11,16 @@ export function generateTable(limit) {
 
   // Create header cells
   for (let j = limit; j >= -limit; j--) {
+    const cell = document.createElement('th');
+    cell.classList.add('cell');
+    cell.classList.add('bold-header');
     if (j !== 0) {
-      const cell = document.createElement('th');
-      cell.classList.add('cell');
-      cell.classList.add('bold-header');
       cell.textContent = j;
-      headerRow.appendChild(cell);
     }
+    else {
+    cell.textContent = Mod;
+  }
+     headerRow.appendChild(cell);
   }
 
   table.appendChild(headerRow);
@@ -37,23 +40,14 @@ export function generateTable(limit) {
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-
-      if (j === limit && i === limit) {
-        cell.textContent = "mod";
-        cell.classList.add('bold-header');
-      } else {
-        const value = i % j;
-        cell.textContent = value;
-        cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
-        cell.style.color = '#0000ff';
+      const value = i % j;
+      cell.textContent = value;
+      cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
+      cell.style.color = '#0000ff';
       }
-
       row.appendChild(cell);
+      table.appendChild(row);
     }
-
-    table.appendChild(row);
-  }
-
   tableContainer.appendChild(table);
 }
 
