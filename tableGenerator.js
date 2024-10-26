@@ -1,9 +1,7 @@
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
-
   const table = document.createElement('table');
-
 
   // Create the header row
   const headerRow = document.createElement('tr');
@@ -15,8 +13,9 @@ export function generateTable(limit) {
     cell.classList.add('cell');
     cell.classList.add('bold-header');
     cell.textContent = j;
+    headerRow.appendChild(cell);
     }
-  headerRow.appendChild(cell);
+  
   table.appendChild(headerRow);
 
   // Create the data rows
@@ -44,4 +43,3 @@ export function generateTable(limit) {
 }
 tableContainer.appendChild(table);
 }
-
