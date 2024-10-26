@@ -1,19 +1,13 @@
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
-  
-  const table = document.createElement('table');
-  
+
+  const table = document.createElement('table');   
+
+
   // Create the header row
   const headerRow = document.createElement('tr');
   headerRow.classList.add('row');
-
-  // Create the "mod" cell
-  const modCell = document.createElement('th');
-  modCell.classList.add('cell');
-  modCell.classList.add('bold-header');
-  modCell.textContent = "mod";
-  headerRow.appendChild(modCell);
 
   // Create header cells
   for (let j = limit; j >= -limit; j--) {
@@ -25,7 +19,7 @@ export function generateTable(limit) {
       headerRow.appendChild(cell);
     }
   }
-  
+
   table.appendChild(headerRow);
 
   // Create the data rows
@@ -44,21 +38,22 @@ export function generateTable(limit) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
 
-      if (j === 0) {
-        // This is the "mod" cell, which is already created in the header row
-        continue;
+      if (j === limit && i === limit) {
+        cell.textContent = "mod";
+        cell.classList.add('bold-header');
+      } else {
+        const value = i % j;
+        cell.textContent = value;
+        cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
+        cell.style.color = '#0000ff';
       }
-
-      cell.textContent = i % j;
-      const absValue = Math.abs(i % j);
-      const color = `#${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}`;
-      cell.style.backgroundColor = color;
-      cell.style.color = '#0000ff';
 
       row.appendChild(cell);
     }
+
     table.appendChild(row);
-    }
+  }
+
   tableContainer.appendChild(table);
 }
 
