@@ -1,18 +1,15 @@
-html, body {
-  height: 100%;
-  width: 100%
-}
-
-.table-container {
-  width: 100%
-}
-
-.table {
-  height: 100%;
+table {
   border-collapse: collapse;
+  width: 100%;
 }
 
-.index-column, .index-row {
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.bold-header {
   font-weight: bold;
 }
 
