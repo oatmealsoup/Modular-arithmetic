@@ -1,72 +1,38 @@
-export function generateTable(limit) {
-  const tableContainer = document.getElementById('tableContainer');
-  tableContainer.innerHTML = ''; // Clear existing content
-
-  // Create the table structure
-  const table = document.createElement('table');
-  tableContainer.appendChild(table);
-
-  // Function to generate background color based on a value within the limit
-  function backgroundColor(value, limit) {
+  function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
       return '#ff0000'; // NaN is red
     } else if (absValue === 0) {
       return '#000000'; // 0 is black
-    }
-      const hexValue = (limit - absValue).toString(16).padStart(2, '0');
+    } else {
+      const hexValue = absValue.toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
     }
-
-  // Function to generate text color based on a value within the limit
-  function textColor(value, limit) {
+  }
+    // Function to generate color based on a value within the limit
+  function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
-      return '#ffffff'; // NaN text is White
+      return '#ff0000'; // NaN is red
     } else if (absValue === 0) {
-      return '#ffffff'; // 0's text is white
-    } else if (174 > absValue > 80){
-      return '#ffffff';
-    }
+      return '#000000'; // 0 is black
+    } else {
       const hexValue = absValue.toString(16).padStart(2, '0');
-      const invertedHexValue = (absValue-255).toString(16).padStart(2, '0');
+	  const invertedHexvalue = 
       return `#${hexValue}${hexValue}${hexValue}`;
     }
-
-  // Create the header row with unique styling
-  const headerRow = document.createElement('tr');
-  headerRow.classList.add('header-row'); // Add a specific class for styling
-  table.appendChild(headerRow);
-
-  // Create header cells
-  for (let j = limit; j >= -limit; j--) {
-    const cell = document.createElement('th');
-    cell.classList.add('cell');
-    cell.classList.add('index-column');
-    cell.textContent = j;
-    headerRow.appendChild(cell);
   }
 
-  // Create data rows
-  for (let i = limit; i >= -limit; i--) {
-    const row = document.createElement('tr');
-    table.appendChild(row);
+      // Apply grayscale color and text color
+      const value = parseInt(cell.textContent);
+      const color = mapValueToGrayScale(value);
+      cell.style.backgroundColor = color;
 
-    // Create index cell
-    const indexCell = document.createElement('td');
-    indexCell.classList.add('cell');
-    indexCell.classList.add('index-row');
-    indexCell.textContent = i;
-    row.appendChild(indexCell);
+      // Set text color to inverted hex value
+      cell.style.color = `#${invertedHexValue}${invertedHexValue}${invertedHexValue}`;
 
-    // Create modular cells with shading
-    for (let j = limit; j >= -limit; j--) {
-      const cell = document.createElement('td');
-      cell.classList.add('cell');
-      cell.textContent = (i % j).toString();
-      cell.style.backgroundColor = backgroundColor(i % j, limit)
-      cell.style.color = textColor(i % j, limit);
-    }
       row.appendChild(cell);
-    }
   }
+	tableContainer.appendChild(row);
+  }
+}
