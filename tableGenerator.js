@@ -59,4 +59,13 @@ export function generateTable(limit) {
   }
 	tableContainer.appendChild(row);
   }
+	 // Get the table container and table elements
+  const tableContainer = document.getElementById('tableContainer');
+  const table = document.getElementById('table');
+
+  // Set the table container's width to the viewport width + 100px
+  tableContainer.style.width = `${window.innerWidth + 100}px`;
+
+  // Set the table's width to 100% to fill the container
+  table.style.width = '100%';
 }
