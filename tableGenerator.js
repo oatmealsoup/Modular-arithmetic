@@ -2,7 +2,7 @@ export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
 
-  const table = document.createElement('table');   
+  const table = document.createElement('table');
 
 
   // Create the header row
