@@ -17,7 +17,6 @@ export function generateTable(limit) {
       const hexValue = (limit - absValue).toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
     }
-  }
 
   // Function to generate text color based on a value within the limit
   function textColor(value, limit) {
