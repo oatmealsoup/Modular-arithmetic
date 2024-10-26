@@ -20,7 +20,3 @@ html, body {
   border: 1px solid black;
   padding: 5px;
 }
-
-.index-row, .index-column {
-  font-weight: bold;
-}
