@@ -14,12 +14,8 @@ export function generateTable(limit) {
     const cell = document.createElement('th');
     cell.classList.add('cell');
     cell.classList.add('bold-header');
-    if (j !== 0) {
-      cell.textContent = j;
+    cell.textContent = j;
     }
-    else {
-    cell.textContent = Mod;
-  }
      headerRow.appendChild(cell);
   }
 
