@@ -1,54 +1,44 @@
-export function generateTable(limit) {
+function generateTable(limit) {
+  const tableData = [];
+
+  for (let i = limit; i >= -limit; i--) {
+    tableData.push([]);
+    for (let j = limit; j >= -limit; j--) {
+      if (j !== 0 ) {
+        tableData[limit - i][limit - j] = i % j;
+      } else {
+        tableData[limit - i][limit - j] = 0; // Handle division by zero
+      }
+    }
+  }
+
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
+  const table = document.createElement('table');   
 
-  // Create the header row
-  const headerRow = document.createElement('tr');
-  headerRow.classList.add('row');
-  headerRow.innerHTML = '<th class="index-cell"></th>';
-  for (let j = limit; j >= -limit; j--) {
-    if (j !== 0) {
-      const cell = document.createElement('th');
-      cell.classList.add('cell');
-      cell.classList.add('index-column');
-      cell.textContent = j;
-      headerRow.appendChild(cell);
-    }
-  }
-  tableContainer.appendChild(headerRow);
 
   // Create the data rows
-  for (let i = limit; i >= -limit; i--) {
-    if (i !== 0) {
-      const row = document.createElement('tr');
-      row.classList.add('row');
-
-      // Create the index cell
-      const indexCell = document.createElement('td');
-      indexCell.classList.add('cell');
-      indexCell.classList.add('index-row');
-      indexCell.textContent = i;
-      row.appendChild(indexCell);
-
-      // Create the other cells
-      for (let j = limit; j >= -limit; j--) {
-        if (j !== 0) {
-          const cell = document.createElement('td');
-          cell.classList.add('cell');
-          cell.textContent = (i % j).toString();
-
-          // Get grayscale color
-          const absValue = Math.abs(i % j);
-          const color = `#${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}`;
-          cell.style.backgroundColor = color;
-
-          // Set text color to orange
-          cell.style.color = '#0000ff';
-
-          row.appendChild(cell);
-        }
-      }
-      tableContainer.appendChild(row);
-    }
+  for (let i = 0; i < tableData.length; i++) {
+    const row = document.createElement('tr');
+    for (let j = 0; j < tableData[i].length; j++) {
+      const cell = document.createElement('td');
+      if (j === 0 && j === 0) {
+        cell.textContent = "mod";
+        
+      } else if (i === 0) {
+        cell.textContent = limit - j;
+        cell.style.fontWeight = 'bold';
+       } else if (j === 0) {
+        cell.textContent = limit - i;
+        cell.style.fontWeight = 'bold';
+      } else {
+        cell.textContent = tableData[i][j];
+        cell.style.backgroundColor = `rgb(${Math.abs(tableData[i][j])}, ${Math.abs(tableData[i][j])}, ${Math.abs(tableData[i][j])})`;
   }
+      row.appendChild(cell);
+  }
+    table.appendChild(row);
+  }
+
+  tableContainer.appendChild(table);
 }
