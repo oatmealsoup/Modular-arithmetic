@@ -31,7 +31,7 @@ export function generateTable(limit) {
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
-	    if (j = 0) {
+	    if (j === 0) {
 	cell.textcontent = "NaN";
 	    }
 	else {    
