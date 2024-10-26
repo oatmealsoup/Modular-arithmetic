@@ -7,13 +7,11 @@ export function generateTable(limit) {
   headerRow.classList.add('row');
   headerRow.innerHTML = '<th class="index-cell"></th>';
   for (let j = limit; j >= -limit; j--) {
-    if (j !== 0) {
       const cell = document.createElement('th');
       cell.classList.add('cell');
       cell.classList.add('index-column');
       cell.textContent = j;
       headerRow.appendChild(cell);
-    }
   }
   tableContainer.appendChild(headerRow);
 
@@ -43,5 +41,4 @@ export function generateTable(limit) {
       }
       tableContainer.appendChild(row);
     }
-  }
-}
+
