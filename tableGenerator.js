@@ -1,3 +1,46 @@
+export function generateTable(limit) {
+  const tableContainer = document.getElementById('tableContainer');
+  tableContainer.innerHTML = '';
+
+  // Create the header row
+  const headerRow = document.createElement('tr');
+  headerRow.classList.add('row');
+  headerRow.innerHTML = '<th class="index-cell"></th>';
+  for (let j = limit; j >= -limit; j--) {
+    const cell = document.createElement('th');
+    cell.classList.add('cell');
+    cell.classList.add('index-column');
+    cell.textContent = j;
+    headerRow.appendChild(cell);
+  }
+  tableContainer.appendChild(headerRow);
+
+  // Create the data rows
+  for (let i = limit; i >= -limit; i--) {
+    const row = document.createElement('tr');
+    row.classList.add('row');
+
+    // Create the index cell
+    const indexCell = document.createElement('td');
+    indexCell.classList.add('cell');
+    indexCell.classList.add('index-row');
+    indexCell.textContent = i;
+    row.appendChild(indexCell);
+
+    // Create the other cells
+    for (let j = limit; j >= -limit; j--) {
+      const cell = document.createElement('td');
+      cell.classList.add('cell');
+      cell.textContent = (i % j).toString();
+	  
+	  
+	  // Greyscale
+	  function mapValueToGrayScale(value) {
+  if (isNaN(value)) {
+    return '#ff0000'; // NaN is red
+  }
+
+  // Function to generate background color based on a value within the limit
   function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
@@ -9,7 +52,7 @@
       return `#${hexValue}${hexValue}${hexValue}`;
     }
   }
-    // Function to generate color based on a value within the limit
+    // Shading function
   function getColor(value) {
     const absValue = Math.abs(value);
     if (isNaN(absValue)) {
