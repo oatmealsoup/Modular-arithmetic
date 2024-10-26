@@ -39,7 +39,7 @@ export function generateTable(limit) {
     if (isNaN(absValue)) {
       return '#ff0000';
     } else if (absValue === 0) {
-      return 'blue';
+      return '#0000ff';
     } else {
       const hexValue = absValue.toString(16).padStart(2, '0');
       return `#${hexValue}${hexValue}${hexValue}`;
