@@ -27,8 +27,6 @@ export function generateTable(limit) {
       const cell = document.createElement('td');
       const value = i % j;
       cell.textContent = value;
-      cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
-      cell.style.color = '#0000ff';
       row.appendChild(cell);
     }
     table.appendChild(row);
