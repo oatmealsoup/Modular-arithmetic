@@ -1,5 +1,5 @@
 export function generateTable(limit) {
-  const tableData = [];
+   const tableData = [];
 
   for (let i = 0; i < 2 * limit + 1; i++) {
     const row = [];
@@ -7,16 +7,13 @@ export function generateTable(limit) {
       row.push((limit - i) % (limit - j));
     }
     tableData.push(row);
-  }
-
-  return tableData;
+    return tableData;
 }
 
 function displayTable(table) {
   const tableElement = document.createElement('table');
 
   for (let i = 0; i < table.length; i++) {
-    const row = table[i];
     const rowElement = document.createElement('tr');
 
     for (let j = 0; j < row.length; j++) {
@@ -30,4 +27,5 @@ function displayTable(table) {
   }
 
   document.body.appendChild(tableElement);
+}
 }
