@@ -8,7 +8,7 @@ export function generateTable(limit) {
   const tableHTML = `<table>`;
 
   for (let i = 0; i < tableSize; i++) {
-    const rowHTML = `<tr>`;
+    let rowHTML = `<tr>`;
     for (let j = 0; j < tableSize; j++) {
       const cellValue = (limit - i) % (limit - j);
       const colorValue = Math.max(0, Math.min(255, Math.abs(cellValue)));
