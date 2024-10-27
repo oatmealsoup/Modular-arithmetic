@@ -11,16 +11,19 @@ export function generateTable(limit) {
     cell.textContent = j;
     headerRow.appendChild(cell);
   }
+  headerRow.classList.add('bold-header');
   table.appendChild(headerRow);
 
   // Create the data rows
   for (let i = limit; i >= -limit; i--) {
     const row = document.createElement('tr');
+    
 
     // Create the index cell
     const indexCell = document.createElement('td');
     indexCell.textContent = i;
     row.appendChild(indexCell);
+    indexCell.classList.add('bold-header');
 
     // Fill rows with cells containing the result of i mod j, with color styling
     for (let j = limit; j >= -limit; j--) {
