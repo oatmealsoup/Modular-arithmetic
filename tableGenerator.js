@@ -4,8 +4,14 @@ export function generateTable(limit) {
   const table = document.createElement('table');
 
 
+
   // Create the header row
   const headerRow = document.createElement('tr');
+  
+    //Include "mod" cell
+  const mod = document.createElement('td');
+  headerRow.appendChild(cell);
+  
   for (let j = limit; j >= -limit; j--) {
     const cell = document.createElement('th');
     cell.textContent = j;
