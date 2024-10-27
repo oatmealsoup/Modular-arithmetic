@@ -10,14 +10,6 @@ border: 1px solid black;
 padding: 5px;
 }
 
-.index-row, .index-column {
+.bold-header {
   font-weight: bold;
 }
-
-input[type="number"] {
-  width: 100%;
-  padding: 0;
-  font-size: inherit;
-  box-sizing: border-box;
-}
-
