@@ -1,21 +1,16 @@
-.table {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-grid-gap: 5px;
-}
-
-.cell {
-text-align: center;
-border: 1px solid black;
-padding: 5px;
+td {
+  text-align: center;
+  border: 1px solid black;
 }
 
 .bold-header {
   font-weight: bold;
 }
+
 .light-blue {
-color: lightblue;
+  color: lightblue;
 }
+
 .dark-blue{
-color: lightblue;
+  color: lightblue;
 }
