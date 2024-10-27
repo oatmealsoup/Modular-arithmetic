@@ -6,7 +6,10 @@ export function generateTable(limit) {
   for (let i = limit; i >= -limit; i--) {
     const row = [];
     for (let j = limit; j >= -limit; j--) {
-      row.push(i % j);
+      // Adjust indices to zero-based
+      const adjustedI = i + limit;
+      const adjustedJ = j + limit;
+      row.push(adjustedI % adjustedJ);
     }
     tableData.push(row);
   }
