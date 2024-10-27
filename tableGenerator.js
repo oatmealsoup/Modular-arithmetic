@@ -22,13 +22,18 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
+    // Create cells containing i mod j with styling
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.textContent = (i % j).toString();
+      const integer = parseInt(cell.textContent);
+      const natural = Math.abs(integer);
+      const colorValue = Math.max(0, Math.min(255, natural));
+      cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+      cell.style.color = absCellValue > limit / 2 ? 'lightblue' : 'darkblue';
       row.appendChild(cell);
     }
     table.appendChild(row);
   }
-
   tableContainer.appendChild(table);
 }
