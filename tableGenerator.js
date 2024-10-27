@@ -24,7 +24,7 @@ export function generateTable(limit) {
 
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
-      cell.textContent = (i % j).toString;
+      cell.textContent = (i % j).toString();
       row.appendChild(cell);
     }
     table.appendChild(row);
