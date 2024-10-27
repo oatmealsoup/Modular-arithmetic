@@ -1,21 +1,29 @@
 export function generateTable(limit) {
+  //Remove existing tables
+  if (document.querySelector('table')) {
+  document.querySelector('table').remove();
+}
+  //Table with column number
   const tableSize = 2 * limit + 1;
-  const tableRows = [];
+  const tableHTML = `<table>`;
 
   for (let i = 0; i < tableSize; i++) {
-    const row = [];
+    const rowHTML = `<tr>`;
     for (let j = 0; j < tableSize; j++) {
       const cellValue = (limit - i) % (limit - j);
       const colorValue = Math.max(0, Math.min(255, Math.abs(cellValue)));
       const colorCode = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-      row.push(`<td style="background-color: ${colorCode}">${cellValue}</td>`);
+      const textColor = colorValue > 128 ? '#FF0000' : '#FFA07A';
+
+      rowHTML += `<td style="background-color: ${colorCode}; color: ${textColor}">${cellValue}</td>`;
     }
-    tableRows.push(`<tr>${row.join('')}</tr>`);
+    rowHTML += `</tr>`;
+    tableHTML += rowHTML;
   }
 
-  const tableHTML = `<table>${tableRows.join('')}</table>`;
+  tableHTML += `</table>`;
+
   const tableElement = document.createElement('div');
   tableElement.innerHTML = tableHTML;
-
   document.body.appendChild(tableElement);
 }
