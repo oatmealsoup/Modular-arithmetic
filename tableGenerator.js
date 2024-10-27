@@ -1,4 +1,4 @@
-function generateTable(limit) {
+export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
 
   // Pre-calculate values
