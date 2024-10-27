@@ -1,29 +1,34 @@
 export function generateTable(limit) {
-  //Remove existing tables
-  if (document.querySelector('table')) {
-  document.querySelector('table').remove();
-}
-  //Table with column number
-  const tableSize = 2 * limit + 1;
-  let tableHTML = `<table>`;
+  const tableContainer = document.getElementById('tableContainer');
+  tableContainer.innerHTML = '';
+  const table = document.createElement('table');
 
-  for (let i = 0; i < tableSize; i++) {
-    let rowHTML = `<tr>`;
-    for (let j = 0; j < tableSize; j++) {
-      const cellValue = (limit - i) % (limit - j);
-      const colorValue = Math.max(0, Math.min(255, Math.abs(cellValue)));
-      const colorCode = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-      const textColor = colorValue > 128 ? '#FF0000' : '#FFA07A';
 
-      rowHTML += `<td style="background-color: ${colorCode}; color: ${textColor}">${cellValue}</td>`;
+  // Create the header row
+  const headerRow = document.createElement('tr');
+  for (let j = limit; j >= -limit; j--) {
+    const cell = document.createElement('th');
+    cell.textContent = j;
+    headerRow.appendChild(cell);
+  }
+  table.appendChild(headerRow);
+
+  // Create the data rows
+  for (let i = limit; i >= -limit; i--) {
+    const row = document.createElement('tr');
+
+    // Create the index cell
+    const indexCell = document.createElement('td');
+    indexCell.textContent = i;
+    row.appendChild(indexCell);
+
+    for (let j = limit; j >= -limit; j--) {
+      const cell = document.createElement('td');
+      cell.textContent = (i % j).toString();
+      row.appendChild(cell);
     }
-    rowHTML += `</tr>`;
-    tableHTML += rowHTML;
+    table.appendChild(row);
   }
 
-  tableHTML += `</table>`;
-
-  const tableElement = document.createElement('div');
-  tableElement.innerHTML = tableHTML;
-  document.body.appendChild(tableElement);
+  tableContainer.appendChild(table);
 }
