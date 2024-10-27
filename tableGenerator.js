@@ -1,6 +1,7 @@
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
+  const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
 
 
@@ -48,7 +49,7 @@ export function generateTable(limit) {
     }
     table.appendChild(row);
   }
-  tableContainer.appendChild(table);
   tableContainer.style.height = `${table.offsetHeight}px`;
-  document.body.style.height = `${table.offsetHeight + 100}px`;
+  table.appendChild(fragment);
+  tableContainer.appendChild(table);
 }
