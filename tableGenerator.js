@@ -41,4 +41,5 @@ export function generateTable(limit) {
   }
   tableContainer.appendChild(table);
   tableContainer.style.height = `${table.offsetHeight}px`;
+  document.body.style.height = `${table.offsetHeight + 100}px`;
 }
