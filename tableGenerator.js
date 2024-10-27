@@ -33,8 +33,10 @@ export function generateTable(limit) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       const value = i % j;
-      cell.textContent = value;
-      cell.style.backgroundColor = `rgb(${Math.abs(value)}, ${Math.abs(value)}, ${Math.abs(value)})`;
+      const int = parseInt(i % j);
+      const absValue = Math.abs(int);
+      const color = `#${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}`;
+      cell.style.backgroundColor = color;
       cell.style.color = '#0000ff';
       row.appendChild(cell);
   }
