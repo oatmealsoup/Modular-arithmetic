@@ -22,16 +22,20 @@ export function generateTable(limit) {
     indexCell.textContent = i;
     row.appendChild(indexCell);
 
-    // Create cells containing i mod j with styling
+    // Fill rows with cells containing the result of i mod j, with color styling
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.textContent = (i % j).toString();
       const integer = parseInt(cell.textContent);
       const natural = Math.abs(integer);
-      const colorValue = Math.max(0, Math.min(255, natural));
+      const colorValue = Math.max(0, Math.min(limit, natural));
       cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-      cell.style.color = absCellValue > limit / 2 ? 'lightblue' : 'darkblue';
-      row.appendChild(cell);
+      if (natural > limit / 2) {
+        cell.classList.add('light-blue');
+     } else {
+        cell.classList.add('dark-blue');
+    }
+        row.appendChild(cell);
     }
     table.appendChild(row);
   }
