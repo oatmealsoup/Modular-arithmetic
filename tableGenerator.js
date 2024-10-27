@@ -9,16 +9,15 @@ export function generateTable(limit) {
   const headerRow = document.createElement('tr');
   
     //Include "mod" cell
-  const mod = document.createElement('td');
+  const mod = document.createElement('th');
   mod.textContent = "mod";
-  headerRow.appendChild(cell);
+  headerRow.appendChild(mod);
   
   for (let j = limit; j >= -limit; j--) {
     const cell = document.createElement('th');
     cell.textContent = j;
     headerRow.appendChild(cell);
   }
-  headerRow.classList.add('bold-header');
   table.appendChild(headerRow);
 
   // Create the data rows
@@ -26,7 +25,7 @@ export function generateTable(limit) {
     const row = document.createElement('tr');
     
 
-    // Create the index cell
+    // Create the index cells
     const indexCell = document.createElement('td');
     indexCell.textContent = i;
     row.appendChild(indexCell);
