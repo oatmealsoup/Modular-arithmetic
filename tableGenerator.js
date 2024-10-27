@@ -7,10 +7,8 @@ export function generateTable(limit) {
       row.push((limit - i) % (limit - j));
     }
     tableData.push(row);
-    return tableData;
-}
-
-function displayTable(table) {
+   return tableData;
+  }
   const tableElement = document.createElement('table');
 
   for (let i = 0; i < table.length; i++) {
@@ -25,7 +23,5 @@ function displayTable(table) {
 
     tableElement.appendChild(rowElement);
   }
-
   document.body.appendChild(tableElement);
-}
 }
