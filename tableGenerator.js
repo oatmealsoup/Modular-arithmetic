@@ -1,7 +1,6 @@
 export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
-
   const table = document.createElement('table');
 
 
@@ -25,8 +24,7 @@ export function generateTable(limit) {
 
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
-      const value = i % j;
-      cell.textContent = value;
+      cell.textContent = (i % j).toString;
       row.appendChild(cell);
     }
     table.appendChild(row);
