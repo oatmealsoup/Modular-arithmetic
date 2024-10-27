@@ -1,27 +1,21 @@
 export function generateTable(limit) {
-   const tableData = [];
+  const tableSize = 2 * limit + 1;
+  const tableRows = [];
 
-  for (let i = 0; i < 2 * limit + 1; i++) {
+  for (let i = 0; i < tableSize; i++) {
     const row = [];
-    for (let j = 0; j < 2 * limit + 1; j++) {
-      row.push((limit - i) % (limit - j));
+    for (let j = 0; j < tableSize; j++) {
+      const cellValue = (limit - i) % (limit - j);
+      const colorValue = Math.max(0, Math.min(255, Math.abs(cellValue)));
+      const colorCode = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+      row.push(`<td style="background-color: ${colorCode}">${cellValue}</td>`);
     }
-    tableData.push(row);
-   return tableData;
+    tableRows.push(`<tr>${row.join('')}</tr>`);
   }
-  const tableElement = document.createElement('table');
 
-  for (let i = 0; i < table.length; i++) {
-    const rowElement = document.createElement('tr');
+  const tableHTML = `<table>${tableRows.join('')}</table>`;
+  const tableElement = document.createElement('div');
+  tableElement.innerHTML = tableHTML;
 
-    for (let j = 0; j < row.length; j++) {
-      const cell = row[j];
-      const cellElement = document.createElement('td');
-      cellElement.textContent = cell;
-      rowElement.appendChild(cellElement);
-    }
-
-    tableElement.appendChild(rowElement);
-  }
   document.body.appendChild(tableElement);
 }
