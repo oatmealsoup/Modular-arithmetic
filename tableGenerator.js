@@ -5,7 +5,7 @@ export function generateTable(limit) {
 }
   //Table with column number
   const tableSize = 2 * limit + 1;
-  const tableHTML = `<table>`;
+  let tableHTML = `<table>`;
 
   for (let i = 0; i < tableSize; i++) {
     let rowHTML = `<tr>`;
