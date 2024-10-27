@@ -33,13 +33,15 @@ export function generateTable(limit) {
       const cell = document.createElement('td');
       cell.classList.add('cell');
       const value = i % j;
-      cell.textContent = (value).toString();
+      cell.textContent = value.toString();
+      if (value != NaN){
       const absValue = Math.abs(value);
       const color = `#${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}${absValue.toString(16).padStart(2, '0')}`;
       cell.style.backgroundColor = color;
       cell.style.color = '#0000ff';
+      }
       row.appendChild(cell);
-  }
+      }
   }
   tableContainer.appendChild(table);
 }
