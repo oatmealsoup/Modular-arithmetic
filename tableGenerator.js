@@ -10,6 +10,7 @@ export function generateTable(limit) {
   
     //Include "mod" cell
   const mod = document.createElement('td');
+  mod.textContent = "mod";
   headerRow.appendChild(cell);
   
   for (let j = limit; j >= -limit; j--) {
