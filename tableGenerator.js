@@ -32,7 +32,7 @@
       }
       //Cell with "mod"
       if (i === -limit && j === -limit) {
-        cell.textContent= "mod"
+        cell.textContent= "mod";
       }
       //Index column
       if (i === -limit) {
@@ -66,10 +66,7 @@
   tableContainer.appendChild(table);
 
     // Scaling
-    const scaleFactor = Math.min(
-    tableContainer.clientWidth / table.offsetWidth,
-    tableContainer.clientHeight / table.offsetHeight
-  );
-
-  table.style.transform = `scale(${scaleFactor})`;
+    const scaleFactor = tableContainer.clientWidth / table.offsetWidth,;
+    table.style.transform = `scale(${scaleFactor})`;
+    table.style.transformOrigin = '0 0';
 }
