@@ -3,9 +3,6 @@
   tableContainer.innerHTML = '';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
-
-   const fragment = document.createDocumentFragment();
-  const table = document.createElement('table');
   
   //Shading function
   const colorMap = [];
