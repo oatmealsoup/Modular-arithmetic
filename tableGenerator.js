@@ -7,11 +7,11 @@
   tableContainer.style.margin = '0';
   tableContainer.style.padding = '0';
 
-  //Make table
+  // Make table
   const table = document.createElement('table');
   table.style.tableLayout = 'fixed';
 
-  //Shading function
+  // Shading function
   const colorMap = [];
   for (let i = 0; i <= limit; i++) {
     const normalized = i / limit;
@@ -19,36 +19,38 @@
     colorMap[i] = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   }
     
-  //Table construction
+  // Table construction
   for (let i = -limit; i <= limit; i++) {
     const row = document.createElement('tr');
 
     for (let j = -limit; j <= limit; j++) {
       const cell = document.createElement('td');
-      cell.classList.add('square-cell');
-      cell.classList.add('pixelated-text');
 
-      //Bold indices
+      // Bold indices
       if (i === -limit || j === -limit) {
         cell.classList.add('bold-text');
       }
-      //Cell with "mod"
+      
+      // Cell with "mod"
       if (i === -limit && j === -limit) {
         cell.textContent= "mod";
       }
-      //Index column
+      
+      // Index column
       if (i === -limit) {
         cell.textContent = j;
       }
-      //Index row
+      
+      // Index row
        if (j === -limit) {
         cell.textContent = i;
+         
        }
-      //Modular calculations
+      // Modular calculations
        if(i > -limit && j > -limit) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
       
-         //Apply colors to background
+         // Apply colors to background
         if (j !== 0) {
           cell.style.backgroundColor = colorMap[cell.textContent];
     
