@@ -42,9 +42,8 @@
       //Modular calculations
        if(i > -limit && j > -limit) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
-        maxCellWidth = 0;
-        const cellWidth = cell.offsetWidth;
-        maxCellWidth = Math.max(maxCellWidth, cellWidth);
+        let maxCellWidth = 0;
+        maxCellWidth = Math.max(maxCellWidth, cell.offsetWidth);
       
          //Apply colors to background
         if (j !== 0) {
