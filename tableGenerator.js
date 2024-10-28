@@ -20,34 +20,34 @@
   }
     
   // Table construction
-  for (let i = -limit; i <= limit; i++) {
+  for (let i = -limit - 1; i <= limit; i++) {
     const row = document.createElement('tr');
 
-    for (let j = -limit; j <= limit; j++) {
+    for (let j = -limit - 1; j <= limit; j++) {
       const cell = document.createElement('td');
 
       // Bold indices
-      if (i === -limit || j === -limit) {
+      if (i === -limit - 1 || j === -limit - 1) {
         cell.classList.add('bold-text');
       }
       
       // Cell with "mod"
-      if (i === -limit && j === -limit) {
+      if (i === -limit - 1 && j === -limit - 1) {
         cell.textContent= "mod";
       }
       
       // Index column
-      if (i === -limit) {
+      if (i === -limit - 1) {
         cell.textContent = j;
       }
       
       // Index row
-       if (j === -limit) {
+       if (j === -limit - 1) {
         cell.textContent = i;
          
        }
       // Modular calculations
-       if(i > -limit && j > -limit) {
+       if(i > -limit - 1 && j > -limit - 1) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
       
          // Apply colors to background
