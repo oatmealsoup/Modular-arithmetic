@@ -42,19 +42,17 @@ export function generateTable(limit) {
 for (let j = limit; j >= -limit; j--) {
   const cell = document.createElement('td');
   cell.textContent = (i % j).toString();
-
   const integer = parseInt(cell.textContent);
-  if (!isNaN(integer)) {
+  if (integer != NaN) {
     const natural = Math.abs(integer);
     const colorValue = colorMap[natural];
     cell.style.backgroundColor = colorCode;
 
     if (natural > limit / 2) {
       cell.classList.add('light-blue');
-    } else {
+    } else if (natural < limit / 2) {
       cell.classList.add('dark-blue');
-    }
-  } else {
+    } else {
     // Handle NaN cases
     cell.style.backgroundColor = "darkblue"; // Use dark blue for NaN values
   }
