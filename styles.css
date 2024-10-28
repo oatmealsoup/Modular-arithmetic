@@ -3,6 +3,17 @@ html, body {
   max-height: 100vw;
   margin: 0;
 }
+table {
+  table-layout: fixed;
+  width: 100%;
+
+}
+
+th, td {
+  white-space: nowrap;
+  text-align: center;
+}
+
 
 .bold-style {
   font-weight: bold;
