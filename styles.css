@@ -5,8 +5,8 @@ html, body {
 }
 
 #tableContainer{
-  max-width: 720 px;
-  max-height: 720 px;
+  max-width: 720px;
+  max-height: 720px;
   margin: 0;
   padding: 0;
 }
