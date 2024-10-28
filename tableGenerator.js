@@ -56,6 +56,12 @@
           }
       }
     }
+      //Square cells
+      const cells = document.querySelectorAll('td', 'th');
+      cells.forEach(cell => {
+      cell.classList.add('square-cell');
+      });
+
       row.appendChild(cell);
     }
     fragment.appendChild(row);
