@@ -23,6 +23,7 @@ html, body {
   max-width: 720px;
   max-height: 720px;
   table-layout: fixed;
+  width: 100%;
 }
   
 .square-cell {
