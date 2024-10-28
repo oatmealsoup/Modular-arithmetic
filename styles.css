@@ -3,10 +3,12 @@ html, body {
   max-height: 100vw;
   margin: 0;
 }
-table {
+.fixed-width-table {
   table-layout: fixed;
+  width: 100%;
 }
-td {
+
+.fixed-width-table td {
   width: 100%;
 }
 
