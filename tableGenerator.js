@@ -45,8 +45,7 @@ export function generateTable(limit) {
       if (cell.textContent != NaN){
       const integer = parseInt(cell.textContent);
       const natural = Math.abs(integer);
-      const colorValue = colorMap[natural];
-      cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+      cell.style.backgroundColor = colorMap[natural];
       if (natural > limit / 2) {
         cell.classList.add('light-blue');
      } else {
