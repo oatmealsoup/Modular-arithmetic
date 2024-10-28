@@ -48,7 +48,6 @@
     }
     fragment.appendChild(row);
   }
-  }
   table.appendChild(fragment);
   tableContainer.appendChild(table);
 }
