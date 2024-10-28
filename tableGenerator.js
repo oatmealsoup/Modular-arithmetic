@@ -42,7 +42,10 @@
       //Modular calculations
        if(i > -limit && j > -limit) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
-        
+        maxCellWidth = 0;
+        const cellWidth = cell.offsetWidth;
+        maxCellWidth = Math.max(maxCellWidth, cellWidth);
+      
          //Apply colors to background
         if (j !== 0) {
           cell.style.backgroundColor = colorMap[cell.textContent];
@@ -55,6 +58,7 @@
           }
       }
     }
+      console.log(maxCellWidth);
       row.appendChild(cell);
     }
     fragment.appendChild(row);
