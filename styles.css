@@ -3,9 +3,19 @@ html, body {
   max-height: 100vw;
 }
 
+table td {
+  padding: 0
+  width: 1%
+  white-space: nowrap
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+  grid-gap: 0;
+}
+
 .cell {
-  width: 100px;
-  height: 100px;
   text-align: center;
   margin: 0;
   padding: 0;
