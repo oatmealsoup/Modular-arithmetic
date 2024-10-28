@@ -3,8 +3,15 @@ export function generateTable(limit) {
   tableContainer.innerHTML = '';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
-
-
+  
+  //Shading function
+  const colorMap = [];
+  for (let i = 0; i <= limit; i++) {
+    const normalized = i / limit;
+    const colorValue = Math.round(normalized * 255);
+    colorMap[i] = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+  }
+  
   // Create the header row
   const headerRow = document.createElement('tr');
   
@@ -37,8 +44,7 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
       const integer = parseInt(cell.textContent);
       const natural = Math.abs(integer);
-      const normalizedValue = natural / limit;
-      const colorValue = Math.round(normalizedValue * 255);
+      const colorValue = colorMap[natural];
       cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
       if (natural > limit / 2) {
         cell.classList.add('light-blue');
