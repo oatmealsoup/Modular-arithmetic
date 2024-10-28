@@ -3,9 +3,10 @@
   tableContainer.textContent = '';
   tableContainer.width = '720px';
   tableContainer.height = '720px';
-  const table = document.createElement('table');
   table.style.tableLayout = 'fixed';
-
+  tableContainer.style.margin = '0';
+  tableContainer.style.padding = '0';
+  const table = document.createElement('table');
 
   //Shading function
   const colorMap = [];
