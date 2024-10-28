@@ -5,6 +5,7 @@
   tableContainer.height = '720px';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
+  table.classList.add('fixed-width-table');
 
   
   //Shading function
