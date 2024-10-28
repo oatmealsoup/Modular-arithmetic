@@ -7,7 +7,6 @@ html, body {
 #tableContainer {
   height: 50vmax;
   width: 50vmax;
-  margin: 0 auto;
 }
 
 .table {
