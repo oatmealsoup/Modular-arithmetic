@@ -5,14 +5,17 @@ html, body {
 }
 
 #tableContainer {
-  height: 50vmax;
-  width: 50vmax;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 50vh;
 }
 
 .table {
   table-layout: fixed;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 50%;
+  max-width: 50%;
   width: 100%;
   border-collapse: collapse;
 }
@@ -25,8 +28,10 @@ html, body {
 
 .light-blue {
   color: lightblue;
+  text-align: center;
 }
 
 .dark-blue{
   color: darkblue;
+  text-align: center;
 }
