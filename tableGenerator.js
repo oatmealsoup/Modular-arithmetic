@@ -1,8 +1,8 @@
   export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
-  tableContainer.Width = '990px';
-  tableContainer.Height = '990px';
+  tableContainer.width = '720px';
+  tableContainer.height = '720px';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   table.style.layout = 'fixed';
@@ -65,9 +65,6 @@
   table.appendChild(fragment);
   tableContainer.appendChild(table);
     
-  const containerWidth = container.offsetWidth;
-  const containerHeight = container.offsetHeight;
-
   // Calculate the scale factor that fits within the container's width
   const maxWidthScale = tableContainer.width / table.offsetWidth;
   const maxHeightScale = tablecontainer.height / table.offsetHeight;
