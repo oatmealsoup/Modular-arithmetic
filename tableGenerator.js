@@ -64,8 +64,8 @@
   tableContainer.appendChild(table);
     
   // Calculate the scale factor that fits within the container's width
-  const maxWidthScale = tableContainer.width / table.offsetWidth;
-  const maxHeightScale = tablecontainer.height / table.offsetHeight;
-  const scaleFactor = Math.min(maxWidthScale, maxHeightScale);
+  const widthScale = tableContainer.width / table.offsetWidth;
+  const heightScale = tablecontainer.height / table.offsetHeight;
+  const scaleFactor = Math.min(widthScale, heightScale);
   table.style.transform = `scale(${scaleFactor})`;
 }
