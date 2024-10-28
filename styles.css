@@ -3,21 +3,7 @@ html, body {
   max-height: 100vw;
 }
 
-#tableContainer {
-  max-width: 720px;
-  max-height: 720px;
-  margin: 0;
-  padding: 0;
-}
-
-.table {
-  table-layout: fixed;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-  
-.square-cell {
+.cell {
   width: 100px;
   height: 100px;
   text-align: center;
@@ -26,38 +12,19 @@ html, body {
 }
 
 .bold-style {
-  width: 100px;
-  height: 100px;
   font-weight: bold;
   text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .light-blue {
-  width: 100px;
-  height: 100px;
   color: lightblue;
-  text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .dark-blue{
-  width: 100px;
-  height: 100px;
   color: darkblue; 
-  text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .pixel-font {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
