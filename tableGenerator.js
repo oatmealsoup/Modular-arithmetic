@@ -24,6 +24,7 @@
     for (let j = -limit; j <= limit; j++) {
       const cell = document.createElement('td');
       cell.classList.add('square-cell');
+      cell.classList.add('pixelated-text');
 
       //Bold indices
       if (i === -limit || j === -limit) {
