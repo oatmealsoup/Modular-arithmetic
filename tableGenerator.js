@@ -21,18 +21,25 @@
       if (i === -limit || j === -limit) {
         cell.classList.add('bold-text');
       }
-
+      if (i === -limit && j === -limit) {
+        cell.textContent= "mod"
+      }
       if (i === -limit) {
         cell.textContent = j;
-      } else if (j === -limit) {
+      }
+       if (j === -limit) {
         cell.textContent = i;
-      } else {
-        cell.textContent = i % j;
+       }
+       if(i > -limit %% j > -limit) {
+          cell.textContent = i % j;
 
-        if (j !== 0) {
+          if (j !== 0) {
           const natural = Math.abs(cell.textContent);
           cell.style.backgroundColor = colorMap[natural];
-
+          }
+          else {
+          return;
+          }
           if (natural > limit / 2) {
             cell.classList.add('light-blue');
           } else {
