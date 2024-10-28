@@ -5,6 +5,7 @@ html, body {
 }
 .fixed-width-table {
   table-layout: fixed;
+  width: 100%;
 }
 
 .fixed-width-table td {
