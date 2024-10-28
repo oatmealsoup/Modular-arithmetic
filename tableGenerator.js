@@ -42,10 +42,12 @@ export function generateTable(limit) {
     for (let j = limit; j >= -limit; j--) {
       const cell = document.createElement('td');
       cell.textContent = (i % j).toString();
+      if (cell.textContent != NaN){
       const integer = parseInt(cell.textContent);
       const natural = Math.abs(integer);
       const colorValue = colorMap[natural];
       cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+      }
       if (natural > limit / 2) {
         cell.classList.add('light-blue');
      } else {
