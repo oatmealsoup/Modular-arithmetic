@@ -5,7 +5,9 @@
   tableContainer.height = '720px';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
-  table.classList.add('fixed-width-table');
+  table.style.tableLayout = 'fixed';
+  table.style.width = '100%';
+
 
   
   //Shading function
@@ -43,6 +45,7 @@
        if(i > -limit && j > -limit) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
         let maxCellWidth = 0;
+        const cellWidth = cell.offsetWidth;
         maxCellWidth = Math.max(maxCellWidth, cell.offsetWidth);
       
          //Apply colors to background
@@ -64,10 +67,12 @@
   }
   table.appendChild(fragment);
   tableContainer.appendChild(table);
-    
-  // Calculate the scale factor that fits within the container's width
-  const widthScale = tableContainer.width / table.offsetWidth;
-  const heightScale = tablecontainer.height / table.offsetHeight;
-  const scaleFactor = Math.min(widthScale, heightScale);
+
+    // Scaling
+    const scaleFactor = Math.min(
+    tableContainer.clientWidth / table.offsetWidth,
+    tableContainer.clientHeight / table.offsetHeight
+  );
+
   table.style.transform = `scale(${scaleFactor})`;
 }
