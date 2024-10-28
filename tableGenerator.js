@@ -30,15 +30,12 @@
        if (j === -limit) {
         cell.textContent = i;
        }
-       if(i > -limit %% j > -limit) {
+       if(i > -limit && j > -limit) {
           cell.textContent = i % j;
 
           if (j !== 0) {
           const natural = Math.abs(cell.textContent);
           cell.style.backgroundColor = colorMap[natural];
-          }
-          else {
-          return;
           }
           if (natural > limit / 2) {
             cell.classList.add('light-blue');
