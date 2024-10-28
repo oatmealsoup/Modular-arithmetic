@@ -5,7 +5,6 @@ export function generateTable(limit) {
   const table = document.createElement('table');
 
 
-
   // Create the header row
   const headerRow = document.createElement('tr');
   
@@ -38,7 +37,8 @@ export function generateTable(limit) {
       cell.textContent = (i % j).toString();
       const integer = parseInt(cell.textContent);
       const natural = Math.abs(integer);
-      const colorValue = Math.max(0, Math.min(limit, natural));
+      const normalizedValue = natural / limit;
+      const colorValue = Math.round(normalizedValue * 255);
       cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
       if (natural > limit / 2) {
         cell.classList.add('light-blue');
