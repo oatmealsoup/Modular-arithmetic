@@ -48,9 +48,9 @@
           }
            //Apply colors to text
           if (natural > limit / 2) {
-            cell.classList.add('light-blue');
-          } else {
             cell.classList.add('dark-blue');
+          } else {
+            cell.classList.add('light-blue');
           }
       }
       row.appendChild(cell);
