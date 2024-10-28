@@ -1,6 +1,6 @@
   export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
-  tableContainer.innerHTML = '';
+  tableContainer.table = '';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   
