@@ -18,12 +18,10 @@ html, body {
 
 .light-blue {
   color: lightblue;
-  text-align: center;
 }
 
 .dark-blue{
-  color: darkblue;
-  text-align: center;
+  color: darkblue; 
 }
 
 .pixel-font {
