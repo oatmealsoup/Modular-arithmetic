@@ -23,6 +23,7 @@
 
     for (let j = -limit; j <= limit; j++) {
       const cell = document.createElement('td');
+      cell.classList.add('square-cell');
 
       //Bold indices
       if (i === -limit || j === -limit) {
@@ -56,12 +57,6 @@
           }
       }
     }
-      //Square cells
-      const cells = document.querySelectorAll('td', 'th');
-      cells.forEach(cell => {
-      cell.classList.add('square-cell');
-      });
-
       row.appendChild(cell);
     }
     fragment.appendChild(row);
