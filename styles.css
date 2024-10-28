@@ -5,10 +5,9 @@ html, body {
 }
 
 #tableContainer {
-  height: 95vmax;
-  width: 95vmax;
+  height: 50vmax;
+  width: 50vmax;
   margin: 0 auto;
-  overflow: auto;
 }
 
 .table {
