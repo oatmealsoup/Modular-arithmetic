@@ -4,8 +4,8 @@ html, body {
   margin: 0;
 }
 #tableContainer{
-  max-width:720 px;
-  max-height:720 px;
+  max-width: 720 px;
+  max-height: 720 px;
   margin: 0;
   padding: 0;
 }
