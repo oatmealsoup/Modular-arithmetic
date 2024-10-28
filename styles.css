@@ -10,14 +10,6 @@ html, body {
   padding: 0;
 }
 
-#cell {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
 .table {
   max-width: 720px;
   max-height: 720px;
