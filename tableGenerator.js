@@ -47,11 +47,11 @@ export function generateTable(limit) {
       const natural = Math.abs(integer);
       const colorValue = colorMap[natural];
       cell.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-      }
       if (natural > limit / 2) {
         cell.classList.add('light-blue');
      } else {
         cell.classList.add('dark-blue');
+    }
     }
         row.appendChild(cell);
     }
