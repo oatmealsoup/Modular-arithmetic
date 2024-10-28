@@ -39,19 +39,25 @@ export function generateTable(limit) {
     indexCell.classList.add('bold-header');
 
     // Fill rows with cells containing the result of i mod j, with color styling
-    for (let j = limit; j >= -limit; j--) {
-      const cell = document.createElement('td');
-      cell.textContent = (i % j).toString();
-      if (cell.textContent != NaN){
-      const integer = parseInt(cell.textContent);
-      const natural = Math.abs(integer);
-      cell.style.backgroundColor = colorMap[natural];
-      if (natural > limit / 2) {
-        cell.classList.add('light-blue');
-     } else {
-        cell.classList.add('dark-blue');
+for (let j = limit; j >= -limit; j--) {
+  const cell = document.createElement('td');
+  cell.textContent = (i % j).toString();
+
+  const integer = parseInt(cell.textContent);
+  if (!isNaN(integer)) {
+    const natural = Math.abs(integer);
+    const colorValue = colorMap[natural];
+    cell.style.backgroundColor = colorCode;
+
+    if (natural > limit / 2) {
+      cell.classList.add('light-blue');
+    } else {
+      cell.classList.add('dark-blue');
     }
-    }
+  } else {
+    // Handle NaN cases
+    cell.style.backgroundColor = "darkblue"; // Use dark blue for NaN values
+  }
         row.appendChild(cell);
     }
     table.appendChild(row);
