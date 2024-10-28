@@ -1,6 +1,8 @@
   export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
+  tableContainer.Width = '990px';
+  tableContainer.Height = '990px';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   table.style.layout = 'fixed';
@@ -63,9 +65,12 @@
   table.appendChild(fragment);
   tableContainer.appendChild(table);
     
-  //Scale table to fit screen
-  const tableHeight = table.offsetHeight;
-  const containerHeight = tableContainer.offsetHeight;
-  const scaleFactor = containerHeight / tableHeight;
+  const containerWidth = container.offsetWidth;
+  const containerHeight = container.offsetHeight;
+
+  // Calculate the scale factor that fits within the container's width
+  const maxWidthScale = tableContainer.width / table.offsetWidth;
+  const maxHeightScale = tablecontainer.height / table.offsetHeight;
+  const scaleFactor = Math.min(maxWidthScale, maxHeightScale);
   table.style.transform = `scale(${scaleFactor})`;
 }
