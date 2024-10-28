@@ -47,7 +47,7 @@
           cell.style.backgroundColor = colorMap[natural];
           }
            //Apply colors to text
-          if ( > limit / 2) {
+          if (natural > limit / 2) {
             cell.classList.add('light-blue');
           } else {
             cell.classList.add('dark-blue');
