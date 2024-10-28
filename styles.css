@@ -6,7 +6,7 @@ html, body {
 
 #tableContainer {
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 50vw;
   height: 50vh;
