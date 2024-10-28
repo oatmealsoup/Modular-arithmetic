@@ -1,6 +1,7 @@
 import { generateTable } from './tableGenerator.js';
 
-document.getElementById('limit').addEventListener('change', () => {
+const generate = document.getElementById("generate");
+generate.addEventListener('click', () => {
   const limit = document.getElementById('limit').value;
   generateTable(limit);
 });
