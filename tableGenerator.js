@@ -1,10 +1,7 @@
   export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
-  tableContainer.width = '720px';
-  tableContainer.height = '720px';
   const table = document.createElement('table');
-  table.style.tableLayout = 'fixed';
 
 
   
@@ -64,6 +61,6 @@
   tableContainer.appendChild(table);
 
     // Scaling
-    const scaleFactor = tableContainer.clientWidth / table.offsetWidth;
+    const scaleFactor = tableContainer.width / table.offsetWidth;
     table.style.transform = `scale(${scaleFactor})`;
 }
