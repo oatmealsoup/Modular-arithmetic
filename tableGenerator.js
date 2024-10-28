@@ -1,7 +1,10 @@
-export function generateTable(limit) {
+  export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.innerHTML = '';
   const fragment = document.createDocumentFragment();
+  const table = document.createElement('table');
+
+   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   
   //Shading function
@@ -11,55 +14,40 @@ export function generateTable(limit) {
     const colorValue = Math.round(normalized * 255);
     colorMap[i] = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   }
-  
-  // Create the header row
-  const headerRow = document.createElement('tr');
-  
-    //Include "mod" cell
-  const mod = document.createElement('th');
-  mod.textContent = "mod";
-  headerRow.appendChild(mod);
-  
-  for (let j = limit; j >= -limit; j--) {
-    const cell = document.createElement('th');
-    cell.textContent = j;
-    headerRow.appendChild(cell);
-  }
-  table.appendChild(headerRow);
 
-  // Create the data rows
-  for (let i = limit; i >= -limit; i--) {
+  for (let i = -limit; i <= limit; i++) {
     const row = document.createElement('tr');
-    
 
-    // Create the index cells
-    const indexCell = document.createElement('td');
-    indexCell.textContent = i;
-    row.appendChild(indexCell);
-    indexCell.classList.add('bold-header');
+    for (let j = -limit; j <= limit; j++) {
+      const cell = document.createElement('td');
 
-    // Fill rows with cells containing the result of i mod j, with color styling
-for (let j = limit; j >= -limit; j--) {
-  const cell = document.createElement('td');
-  cell.textContent = (i % j).toString();
-  const integer = parseInt(cell.textContent);
-  if (integer != NaN) {
-    const natural = Math.abs(integer);
-    cell.style.backgroundColor = colorMap[natural]
+      if (i === -limit || j === -limit) {
+        cell.classList.add('bold-text');
+      }
 
-    if (natural > limit / 2) {
-      cell.classList.add('light-blue');
-    } else if (natural < limit / 2) {
-      cell.classList.add('dark-blue');
-    } else {
-    // Handle NaN cases
-    cell.style.backgroundColor = "darkblue"; // Use dark blue for NaN values
-  }
-        row.appendChild(cell);
+      if (i === -limit) {
+        cell.textContent = j;
+      } else if (j === -limit) {
+        cell.textContent = i;
+      } else {
+        cell.textContent = i % j;
+
+        if (j !== 0) {
+          const natural = Math.abs(cell.textContent);
+          cell.style.backgroundColor = colorMap[natural];
+
+          if (natural > limit / 2) {
+            cell.classList.add('light-blue');
+          } else {
+            cell.classList.add('dark-blue');
+          }
+      }
+
+      row.appendChild(cell);
     }
-    table.appendChild(row);
+    fragment.appendChild(row);
   }
-  tableContainer.style.height = `${table.offsetHeight}px`;
+  }
   table.appendChild(fragment);
   tableContainer.appendChild(table);
 }
