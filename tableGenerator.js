@@ -45,8 +45,7 @@ for (let j = limit; j >= -limit; j--) {
   const integer = parseInt(cell.textContent);
   if (integer != NaN) {
     const natural = Math.abs(integer);
-    const colorValue = colorMap[natural];
-    cell.style.backgroundColor = colorCode;
+    cell.style.backgroundColor = colorMap[natural]
 
     if (natural > limit / 2) {
       cell.classList.add('light-blue');
