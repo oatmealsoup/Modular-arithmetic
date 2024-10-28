@@ -5,4 +5,4 @@ generate.addEventListener('click', () => {
   const limit = document.getElementById('limit').value;
   generateTable(limit);
 });
-document.body.style.overflow = 'hidden';
+
