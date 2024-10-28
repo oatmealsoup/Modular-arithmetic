@@ -5,11 +5,8 @@ html, body {
 }
 
 #tableContainer {
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  max-width: 1800px;
-  max-height: 900px;
+  max-width: 1824px;
+  max-height: 1026px;
 }
 
 .table {
