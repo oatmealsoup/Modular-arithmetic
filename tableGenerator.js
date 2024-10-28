@@ -3,7 +3,6 @@
   tableContainer.textContent = '';
   tableContainer.width = '720px';
   tableContainer.height = '720px';
-  const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   table.style.tableLayout = 'fixed';
 
