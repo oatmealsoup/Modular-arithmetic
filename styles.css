@@ -3,12 +3,12 @@ html, body {
   max-height: 100vw;
   margin: 0;
 }
-.table-container{
+#table-container{
   max-width:720 px;
   max-height:720 px;
   margin: 0;
   padding: 0;
-.cell {
+.square-cell {
   width: 100px;
   height: 100px;
   text-align: center;
