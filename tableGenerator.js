@@ -6,7 +6,6 @@
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
   table.style.tableLayout = 'fixed';
-  table.style.width = '100%';
 
 
   
