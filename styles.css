@@ -4,8 +4,8 @@ html, body {
 }
 
 #tableContainer {
-  height: 95vh;
-  width: 95%;
+  height: 95vmax;
+  width: 95vmax;
   margin: 0 auto;
   overflow: auto;
 }
