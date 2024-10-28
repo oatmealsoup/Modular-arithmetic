@@ -1,12 +1,12 @@
 html, body {
-  height: 100vmax;
-  width: 100vmax;
+  max-width: 1026px;
+  max-height: 1026px;
   margin: 0;
 }
 
-#tableContainer {
-  max-width: 1026px;
-  max-height: 1026px;
+.tableContainer {
+  max-width: 990px;
+  max-height: 990px;
 }
 
 .table {
