@@ -3,6 +3,9 @@
   tableContainer.textContent = '';
   const fragment = document.createDocumentFragment();
   const table = document.createElement('table');
+  table.style.layout = 'fixed';
+  table.style.borderCollapse = 'collapse';
+
   
   //Shading function
   const colorMap = [];
