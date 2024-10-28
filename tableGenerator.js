@@ -1,10 +1,12 @@
   export function generateTable(limit) {
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
+  tableContainer.width = '720px';
+  tableContainer.height = '720px';
   const table = document.createElement('table');
+  table.style.tableLayout = 'fixed';
 
 
-  
   //Shading function
   const colorMap = [];
   for (let i = 0; i <= limit; i++) {
