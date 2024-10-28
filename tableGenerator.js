@@ -59,4 +59,10 @@
   }
   table.appendChild(fragment);
   tableContainer.appendChild(table);
+    
+  //Scale table to fit screen
+  const tableHeight = table.offsetHeight;
+  const containerHeight = tableContainer.offsetHeight;
+  const scaleFactor = containerHeight / tableHeight;
+  table.style.transform = `scale(${scaleFactor})`;
 }
