@@ -18,6 +18,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.table {
+  max-width: 720px;
+  max-height: 720px;
+  table-layout: fixed;
+}
   
 .square-cell {
   width: 100px;
