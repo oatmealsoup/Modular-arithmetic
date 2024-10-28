@@ -4,9 +4,17 @@ html, body {
   margin: 0;
 }
 
-#tableContainer{
+#tableContainer {
   max-width: 720px;
   max-height: 720px;
+  margin: 0;
+  padding: 0;
+}
+
+#cell {
+  width: 100px;
+  height: 100px;
+  text-align: center;
   margin: 0;
   padding: 0;
 }
