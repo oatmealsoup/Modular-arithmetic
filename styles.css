@@ -8,6 +8,7 @@ html, body {
   max-height:720 px;
   margin: 0;
   padding: 0;
+}
   
 .square-cell {
   width: 100px;
