@@ -42,22 +42,20 @@
        }
       //Modular calculations
        if(i > -limit && j > -limit) {
-        cell.textContent = i % j;
+        cell.textContent = ((i % j)+j)/j;
         
-        //Absolute value for colors
-        const natural = Math.abs(cell.textContent);
-
          //Apply colors to background
         if (j !== 0) {
-          cell.style.backgroundColor = colorMap[natural];
-          }
+          cell.style.backgroundColor = colorMap[cell.textContent];
+    
            //Apply colors to text
-          if (natural > limit / 2) {
+          if (cell.textContent > limit / 2) {
             cell.classList.add('dark-blue');
           } else {
             cell.classList.add('light-blue');
           }
       }
+    }
       row.appendChild(cell);
     }
     fragment.appendChild(row);
