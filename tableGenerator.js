@@ -59,4 +59,17 @@
   }
   table.appendChild(fragment);
   tableContainer.appendChild(table);
+  
+  //Get browser dimensions
+  const containerRect = tableContainer.parentElement.getBoundingClientRect();
+  const containerWidth = containerRect.width;
+  const containerHeight = containerRect.height;
+
+  // Calculate the scale factor
+  const scaleX = containerWidth / table.offsetWidth;
+  const scaleY = containerHeight / table.offsetHeight;
+  const scale = Math.min(scaleX, scaleY);
+
+  // Apply the scale transformation
+  table.style.transform = `scale(${scale})`;
 }
