@@ -59,9 +59,8 @@
     }
       row.appendChild(cell);
     }
-    fragment.appendChild(row);
+    table.appendChild(row);
   }
-  table.appendChild(fragment);
   tableContainer.appendChild(table);
 
     // Scaling
