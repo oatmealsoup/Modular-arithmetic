@@ -28,7 +28,6 @@ html, body {
 
 .pixel-font {
   font-family: monospace;
-  font-size: 16px;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
 }
