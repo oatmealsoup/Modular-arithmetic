@@ -42,7 +42,7 @@
        }
       //Modular calculations
        if(i > -limit && j > -limit) {
-        cell.textContent = ((i % j)+j)/j;
+        cell.textContent = ((i % j)+j)%j;
         
          //Apply colors to background
         if (j !== 0) {
