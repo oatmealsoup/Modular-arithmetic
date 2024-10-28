@@ -3,6 +3,9 @@ html, body {
   max-height: 100vw;
   margin: 0;
 }
+table {
+  table-layout: fixed;
+}
 
 .bold-style {
   font-weight: bold;
