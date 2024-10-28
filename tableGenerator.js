@@ -44,9 +44,6 @@
       //Modular calculations
        if(i > -limit && j > -limit) {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
-        let maxCellWidth = 0;
-        const cellWidth = cell.offsetWidth;
-        maxCellWidth = Math.max(maxCellWidth, cell.offsetWidth);
       
          //Apply colors to background
         if (j !== 0) {
@@ -60,7 +57,6 @@
           }
       }
     }
-      console.log(maxCellWidth);
       row.appendChild(cell);
     }
     fragment.appendChild(row);
