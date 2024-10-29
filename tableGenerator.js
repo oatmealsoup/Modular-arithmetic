@@ -1,12 +1,9 @@
   export function generateTable(limit) {
-  //Format container for scaling
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
-  tableContainer.style.margin = '50px';
 
   // Make table
   const table = document.createElement('table');
-  table.style.tableLayout = 'fixed';
 
   // Shading function
   const colorMap = [];
