@@ -3,7 +3,7 @@ function mod() {
   const b = parseInt(document.getElementById('b').value);
 
   // Basic modulo calculation
-  const result = ((a % b)+b)%b;
+  const result = ((a % b) + Math.abs(b)) % Math.abs(b);
 
   // Store values locally (using localStorage)
   localStorage.setItem('a', a);
