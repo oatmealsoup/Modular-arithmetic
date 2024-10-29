@@ -9,7 +9,7 @@ function mod() {
 
 
 // Modulo calculation
-  const result = (a-b)*Math.floor(a/b);
+  const result = (a-b)*Math.floor(Math.abs(a)/Math.abs(b));
 
 // Store values locally
   localStorage.setItem('a', a);
