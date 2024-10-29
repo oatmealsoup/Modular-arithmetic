@@ -2,10 +2,7 @@
   //Format container for scaling
   const tableContainer = document.getElementById('tableContainer');
   tableContainer.textContent = '';
-  tableContainer.width = '720px';
-  tableContainer.height = '720px';
-  tableContainer.style.margin = '0';
-  tableContainer.style.padding = '0';
+  tableContainer.style.margin = '50px';
 
   // Make table
   const table = document.createElement('table');
