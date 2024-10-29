@@ -13,7 +13,10 @@ html, body {
 .table {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 50px));
   grid-gap: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .cell {
