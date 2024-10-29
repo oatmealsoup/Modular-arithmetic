@@ -2,10 +2,10 @@ function mod() {
   const a = parseInt(document.getElementById('a').value);
   const b = parseInt(document.getElementById('b').value);
 
-  // Basic modulo calculation
+  // Modulo calculation
   const result = ((a % b) + Math.abs(b)) % Math.abs(b);
 
-  // Store values locally (using localStorage)
+  // Store values locally
   localStorage.setItem('a', a);
   localStorage.setItem('b', b);
 
