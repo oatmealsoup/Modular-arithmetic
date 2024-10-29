@@ -4,9 +4,6 @@ html, body {
 }
 
 div [id=tableContainer] {
-  position: fixed;
-  top: 50px;
-  left: 0;
   width: 80vw;
   height: 80vh;
   margin: 0;
