@@ -42,8 +42,10 @@
       
       // Modular calculations
        else {
-        cell.textContent = (a-b)*Math.floor(a/b);
-        const natural = Math.abs(cell.textContent);
+        cell.textContent = (i-j)*Math.floor(i/j);
+
+        // For shading negative results
+        let natural = Math.abs(cell.textContent);
          
          // Apply colors to background
         if (j !== 0) {
