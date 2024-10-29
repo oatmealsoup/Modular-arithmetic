@@ -66,6 +66,6 @@
   tableContainer.appendChild(table);
 
     // Scaling
-    const scaleFactor = tableContainer.clientWidth / table.offsetWidth;
-    table.style.transform = `scale(${scaleFactor})`;
+    const scaleFactor = table.offsetWidth / tableContainer.clientWidth ;
+    tableContainer.style.transform = `scale(${scaleFactor})`;
 }
