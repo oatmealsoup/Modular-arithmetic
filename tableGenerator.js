@@ -31,17 +31,17 @@
       }
       
       // Index column
-      if (i === -limit - 1) {
+      else if (i === -limit - 1) {
         cell.textContent = j;
       }
       
       // Index row
-       if (j === -limit - 1) {
-        cell.textContent = i;
-         
+       else if (j === -limit - 1) {
+      cell.textContent = i;
        }
+      
       // Modular calculations
-       if(i > -limit - 1 && j > -limit - 1) {
+       else {
         cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
       
          // Apply colors to background
