@@ -4,8 +4,7 @@ html, body {
 
 #tableContainer {
   margin: 50px;
-  overflow: auto;
-
+}
 
 .table {
   display: grid;
