@@ -61,8 +61,4 @@
     table.appendChild(row);
   }
   tableContainer.appendChild(table);
-    
-  //Scale function
-  const factor = table.width / tableContainer.width;
-  table.style.transform = scale(`${factor}`)
 }
