@@ -43,10 +43,11 @@
       // Modular calculations
        else {
         cell.textContent = (a-b)*Math.floor(a/b);
-      
+        const natural = Math.abs(cell.textContent);
+         
          // Apply colors to background
         if (j !== 0) {
-          cell.style.backgroundColor = colorMap[cell.textContent];
+          cell.style.backgroundColor = colorMap[natural];
     
            //Apply colors to text
           if (cell.textContent > limit / 2) {
