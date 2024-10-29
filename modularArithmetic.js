@@ -2,6 +2,7 @@ function mod() {
 //Clear storage
   localStorage.removeItem('a');
   localStorage.removeItem('b');
+  localStorage.removeItem('result');
   
 // Get a and b
   const a = parseInt(document.getElementById('a').value);
