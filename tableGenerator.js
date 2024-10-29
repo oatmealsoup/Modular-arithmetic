@@ -42,7 +42,7 @@
       
       // Modular calculations
        else {
-        cell.textContent = (j+1)-((i+1)*(Math.floor((j+1) / (i+1)));
+        cell.textContent = (j-1)-(i-1)*(Math.floor((j-1) / (i-1)));
 
         // For shading negative results
         let natural = Math.abs(cell.textContent);
