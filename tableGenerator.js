@@ -42,7 +42,7 @@
       
       // Modular calculations
        else {
-        cell.textContent = ((i % j) + Math.abs(j)) % Math.abs(j);
+        cell.textContent = (a-b)*Math.floor(a/b);
       
          // Apply colors to background
         if (j !== 0) {
