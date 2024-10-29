@@ -1,6 +1,7 @@
 function mod() {
   const a = parseInt(document.getElementById('a').value);
   const b = parseInt(document.getElementById('b').value);
+  localStorage.clear();
 
   // Modulo calculation
   const result = (a-b)*Math.floor(a/b);
