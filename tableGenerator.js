@@ -1,67 +1,57 @@
   export function generateTable(limit) {
-  const tableContainer = document.getElementById('tableContainer');
-  tableContainer.textContent = '';
+	const tableContainer = document.getElementById('tableContainer');
+	tableContainer.textContent = '';
 
-  // Make table
-  const table = document.createElement('table');
+	const fragment = document.createDocumentFragment();
+	const table = document.createElement('table');
 
-  // Shading function
-  const colorMap = [];
-  for (let i = 0; i <= limit; i++) {
-    const normalized = i / limit;
-    const colorValue = Math.round(normalized * 255);
-    colorMap[i] = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-  }
-    
-  // Table construction
-  for (let i = -limit - 1; i <= limit; i++) {
-    const row = document.createElement('tr');
+	const colorMap = [];
+	for (let i = 0; i <= limit; i++) {
+		const normalized = i / limit;
+		const colorValue = Math.round(normalized * 255);
+		colorMap[i] = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+	}
 
-    for (let j = -limit - 1; j <= limit; j++) {
-      const cell = document.createElement('td');
+	const cells = [];
+	for (let i = 0; i <= 2 * limit + 1; i++) {
+		cells[i] = [];
+			for (let j = 0; j <= 2 * limit + 1; j++) {
+				const adjustedI = i - limit - 1;
+				const adjustedJ = j - limit - 1;
+				const value = adjustedI - (adjustedJ * Math.floor(adjustedI / adjustedJ));
+				const natural = Math.abs(value);
+				const cellStyle = {};
+				cellStyle.backgroundColor = colorMap[natural];
+				cellStyle.color = natural > limit / 2 ? 'darkblue' : 'lightblue';	
 
-      // Bold indices
-      if (i === -limit - 1 || j === -limit - 1) {
-        cell.classList.add('bold-text');
+			cells[i][j] = {value, style: cellStyle};
+			}
+	}
+	
+	//Fill table with array data
+	for (let i = 0; i <= 2 * limit + 1; i++) {
+		const row = document.createElement('tr');
+			for (let j = 0; j <= 2 * limit + 1; j++) {
+				const cell = cells[i][j];
+				const td = document.createElement('td');
+				if (i === 0 && j === 0) {td.textContent = "mod";} 
+				else if (i === 0) {
+				td.textContent = j - limit - 1;
+				td.classList.add('bold-text');
+				} else if (j === 0) {
+				td.textContent = i - limit - 1;
+				td.classList.add('bold-text');
+				} else {
+				td.textContent = cell.value;
+				td.style.backgroundColor = cell.style.backgroundColor;
+				td.style.color = cell.style.color;
       }
-      
-      // Cell with "mod"
-      if (i === -limit - 1 && j === -limit - 1) {
-        cell.textContent= "mod";
-      }
-      
-      // Index column
-      else if (i === -limit - 1) {
-        cell.textContent = j;
-      }
-      
-      // Index row
-       else if (j === -limit - 1) {
-      cell.textContent = i;
-       }
-      
-      // Modular calculations
-       else {
-        cell.textContent = (i)-(j)*(Math.floor(i / j));
-
-        // For shading negative results
-        let natural = Math.abs(cell.textContent);
-         
-         // Apply colors to background
-        if (j !== 0) {
-          cell.style.backgroundColor = colorMap[natural];
-    
-           //Apply colors to text
-          if (cell.textContent > limit / 2) {
-            cell.classList.add('dark-blue');
-          } else {
-            cell.classList.add('light-blue');
-          }
-      }
+      row.appendChild(td);
     }
-      row.appendChild(cell);
-    }
-    table.appendChild(row);
+    fragment.appendChild(row);
   }
+
+  table.appendChild(fragment);
   tableContainer.appendChild(table);
 }
+
