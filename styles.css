@@ -8,7 +8,6 @@ html, body {
 
 #tableContainer .table {
   display: grid;
-  border-collapse: collapse;
   width: 100%
   border-spacing: 0;
 }
