@@ -23,14 +23,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tableContainer .table .td .bold-style {
+#tableContainer .table .td .bold-text {
   font-weight: bold;
-}
-
-#tableContainer .table .td .light-blue {
-  color: lightblue;
-}
-
-#tableContainer .table .td .dark-blue{
-  color: darkblue; 
 }
