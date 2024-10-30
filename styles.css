@@ -6,11 +6,13 @@ html, body {
   margin: 50px;
 }
 
-.table {
+#tableContainer .table {
   display: grid;
+  border-collapse: collapse;
+  width: 100%
 }
 
-.cell {
+#tableContainer .table .td {
   aspect-ratio: 1/1;
   text-align: center;
   grid-gap: 0;
@@ -21,14 +23,14 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bold-style {
+#tableContainer .table .td .bold-style {
   font-weight: bold;
 }
 
-.light-blue {
+#tableContainer .table .td .light-blue {
   color: lightblue;
 }
 
-.dark-blue{
+#tableContainer .table .td .dark-blue{
   color: darkblue; 
 }
