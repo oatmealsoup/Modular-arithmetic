@@ -1,6 +1,7 @@
 body {
 max-width: 9000px;
 max-height: 9000px;
+background-color: white;
 }
  
 #tableContainer table {
