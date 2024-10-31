@@ -8,12 +8,12 @@ background-color: black;
  border-collapse: collapse;
 }
 #tableContainer td {
-  min-width: 15px;
+  min-width: 30px;
   text-align: center;
   border: 1px solid black;
   padding: 0px;
   margin: 0px;
-  font-size: 5px;
+  font-size: 10px;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
