@@ -55,6 +55,6 @@
 	  
 //Scale down to fit browser
 const factor = window.innerWidth / table.offsetWidth
-table.style.transform = `scale(${scaleFactor})`;
+table.style.transform = `scale(${factor})`;
 }
 
