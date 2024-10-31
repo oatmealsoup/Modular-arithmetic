@@ -2,6 +2,10 @@ html, body {
 width: 100vw;
 height: 100vh;
 }
+#tableContainer {
+height: 95vh
+width: 95vw;
+}
 
 #tableContainer table {
   display: grid;
