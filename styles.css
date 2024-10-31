@@ -4,6 +4,7 @@ max-height: 9000px;
 }
 
 #tableContainer td {
+  min-width: 35px;
   text-align: center;
   border: 1px solid black;
   padding: 0px;
