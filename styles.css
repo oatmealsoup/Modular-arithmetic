@@ -6,13 +6,13 @@ html, body {
   margin: 50px;
 }
 
-#tableContainer .table {
+table {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin: 0 auto;
 }
 
-#tableContainer .table .td {
+td {
   text-align: center;
   grid-gap: 0;
   margin: 0;
@@ -24,6 +24,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tableContainer .table .td .bold-text {
+.bold-text {
   font-weight: bold;
 }
