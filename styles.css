@@ -10,15 +10,16 @@ background-color: black;
 #tableContainer td {
   min-width: 30px;
   text-align: center;
-  border: 1px solid black;
-  padding: 0px;
-  margin: 0px;
-  font-size: 10px;
-  font-family: monospace;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: grayscale;
+ border: 1px solid black;
+ padding: 0px;
+ margin: 0px;
+ font-size: 10px;
+ font-family: monospace;
+ -webkit-font-smoothing: none;
+ -moz-osx-font-smoothing: grayscale;
 }
 
 #tableContainer .bold-text {
-  font-weight: bold;
+ font-weight: bold;
+ text-color: white;
 }
