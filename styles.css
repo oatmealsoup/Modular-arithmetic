@@ -1,7 +1,6 @@
 body {
 max-width: 9000px;
 max-height: 9000px;
-background-color: black;
 }
  
 #tableContainer table {
@@ -21,5 +20,4 @@ background-color: black;
 
 #tableContainer .bold-text {
  font-weight: bold;
- text-color: white;
 }
