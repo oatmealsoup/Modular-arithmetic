@@ -3,15 +3,15 @@ max-width: 9000px;
 max-height: 9000px;
 }
 #tableContainer table {
-  border-collapse: collapse;
+ border-collapse: collapse;
 }
 #tableContainer td {
-  min-width: 30px;
+  min-width: 15px;
   text-align: center;
   border: 1px solid black;
   padding: 0px;
   margin: 0px;
-  font-size: 10px;
+  font-size: 5px;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
