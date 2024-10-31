@@ -9,8 +9,8 @@ height: 70vh;
 }
 
 #tableContainer td {
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 100px;
+  min-height: 100px;
   text-align: center;
   border: 1px solid black;
   box-sizing: border-box;
