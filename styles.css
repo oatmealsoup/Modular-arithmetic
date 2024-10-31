@@ -5,6 +5,7 @@ background-color: white;
 #tableContainer table {
  border-collapse: collapse;
 }
+
 #tableContainer td {
   min-width: 30px;
   text-align: center;
