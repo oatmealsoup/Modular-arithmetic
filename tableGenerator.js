@@ -54,7 +54,7 @@
   tableContainer.appendChild(table);
 	  
 //Scale down to fit browser
-const factor = window.innerWidth / table.offsetWidth
+const factor = Math.min(window.innerWidth / table.offsetWidth, window.innerHeight / table.offsetHeight);
 table.style.transform = `scale(${factor})`;
 }
 
