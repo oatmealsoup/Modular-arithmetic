@@ -1,7 +1,6 @@
-#tableContainer {
-max-width: 3500px;
-max-height: 2000px;
-overflow: auto;
+html, body {
+max-width: 9000px;
+max-height: 9000px;
 }
 
 #tableContainer td {
