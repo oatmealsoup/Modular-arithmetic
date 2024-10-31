@@ -8,11 +8,8 @@ height: 70vh;
   border-collapse: collapse;
 }
 
-#tableContainer table tr {
-  width: 100%;
-}
-
 #tableContainer td {
+  win-width: 50px
   aspect-ratio: 1/1;
   text-align: center;
   border: 1px solid black;
