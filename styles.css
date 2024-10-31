@@ -1,6 +1,6 @@
 #tableContainer table {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+  grid-template-rows: repeat(auto-fit, minmax(auto, auto));
   gap: 2px;
   border-collapse: collapse;
 }
