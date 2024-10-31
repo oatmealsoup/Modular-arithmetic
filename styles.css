@@ -3,12 +3,12 @@ width: 100vw;
 height: 100vh;
 }
 #tableContainer {
-width: 95vw;
-height: 95vh
+max-width: 95vw;
+max-height: 95vh;
 }
 
 #tableContainer td {
-  width: 1vw;
+  width: 30px;
   text-align: center;
   border: 1px solid black;
   padding: 0px;
