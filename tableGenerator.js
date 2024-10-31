@@ -49,9 +49,12 @@
       row.appendChild(td);
     }
     fragment.appendChild(row);
-  }
-
+  }	
   table.appendChild(fragment);
   tableContainer.appendChild(table);
+	  
+//Scale down to fit browser
+const factor = window.innerWidth / table.offsetWidth
+table.style.transform = `scale(${scaleFactor})`;
 }
 
