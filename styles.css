@@ -2,7 +2,9 @@ html, body {
 max-width: 9000px;
 max-height: 9000px;
 }
-
+#tableContainer table {
+  border-collapse: collapse;
+}
 #tableContainer td {
   min-width: 30px;
   text-align: center;
