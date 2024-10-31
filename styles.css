@@ -1,12 +1,12 @@
 #tableContainer table {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 }
 
 #tableContainer td {
   aspect-ratio: 1/1;
   text-align: center;
   border: 1px solid black;
+  box-sizing: border-box;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
