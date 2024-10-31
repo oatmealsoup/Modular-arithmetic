@@ -1,7 +1,5 @@
 #tableContainer table {
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(auto, auto));
-  gap: 2px;
   border-collapse: collapse;
 }
 
