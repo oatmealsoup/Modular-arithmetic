@@ -1,7 +1,9 @@
-html, body {
+body {
 max-width: 9000px;
 max-height: 9000px;
+background-color: black;
 }
+ 
 #tableContainer table {
  border-collapse: collapse;
 }
