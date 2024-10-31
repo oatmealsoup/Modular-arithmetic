@@ -1,15 +1,5 @@
-html, body {
-  margin: 0;
-}
-
-#tableContainer {
-  margin: 50px;
-}
-
 #tableContainer table {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  margin: 0 auto;
 }
 
 #tableContainer td {
