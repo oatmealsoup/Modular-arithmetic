@@ -5,11 +5,11 @@ height: 70vh;
 
 #tableContainer table {
   display: grid;
-  border-collapse: collapse;
+  grid-template-rows: minmax(50px, 1fr);
+  grid-template-columns: minmax(50px, 1fr);
 }
 
 #tableContainer td {
-  min-width: 40px;
   aspect-ratio: 1/1;
   text-align: center;
   border: 1px solid black;
