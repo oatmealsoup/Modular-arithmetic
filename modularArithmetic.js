@@ -15,5 +15,5 @@ function mod() {
   localStorage.setItem('b', b);
 
 // Display the result
-  document.getElementById('result').textContent = `The result of ${a} mod ${b} (for Euclidean division) is: ${result}`;
+  document.getElementById('result').textContent = `The result of ${a} mod ${b} (Euclidean remainder) is: ${result}`;
 }
