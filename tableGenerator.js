@@ -52,9 +52,5 @@
   }	
   table.appendChild(fragment);
   tableContainer.appendChild(table);
-	  
-//Scale down to fit browser
-const factor = Math.min(window.innerWidth / table.offsetWidth, window.innerHeight / table.offsetHeight);
-table.style.transform = `scale(${factor})`;
 }
 
