@@ -1,11 +1,11 @@
 #tableContainer {
-max-width: 1000px;
-max-height: 1000px;
+max-width: 3500px;
+max-height: 2000px;
 overflow: auto;
 }
 
 #tableContainer td {
-  aspect-ratio: 1/1;
+  min-width: 35px
   text-align: center;
   border: 1px solid black;
   padding: 0px;
