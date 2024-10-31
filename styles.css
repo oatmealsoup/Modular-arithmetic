@@ -8,16 +8,19 @@ html, body {
 
 #tableContainer .table {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  border-collapse: collapse;
   width: 100%;
+  margin: 0 auto;
 }
 
 #tableContainer .table .td {
-  aspect-ratio: 1/1;
   text-align: center;
   grid-gap: 0;
   margin: 0;
   padding: 0;
   border: 1px solid black;
+  aspect-ratio: 1/1;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
