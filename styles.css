@@ -1,6 +1,7 @@
 #tableContainer {
 max-width: 1000px;
 max-height: 1000px;
+overflow: auto;
 }
 
 #tableContainer td {
