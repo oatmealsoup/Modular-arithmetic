@@ -1,5 +1,12 @@
 #tableContainer table {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+  gap: 2px;
+  border-collapse: collapse;
+}
+
+#tableContainer table tr {
+  width: 100%;
 }
 
 #tableContainer td {
