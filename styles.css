@@ -10,14 +10,14 @@ height: 70vh;
 
 #tableContainer table {
   display: grid;
+  border-collapse: collapse;
 }
 
 #tableContainer td {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   border: 1px solid black;
-  border-collapse: collapse;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
