@@ -1,14 +1,9 @@
-html, body {
-width: 100vw;
-height: 100vh;
-}
 #tableContainer {
-max-width: 95vw;
-max-height: 95vh;
+max-width: 1000px;
+max-height: 1000px;
 }
 
 #tableContainer td {
-  width: 30px;
   text-align: center;
   border: 1px solid black;
   padding: 0px;
