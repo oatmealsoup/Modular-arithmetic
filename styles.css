@@ -10,6 +10,7 @@ overflow: auto;
   border: 1px solid black;
   padding: 0px;
   margin: 0px;
+  font-size: 10px;
   font-family: monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
