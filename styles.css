@@ -4,8 +4,8 @@ height: 100vh;
 }
 
 #tableContainer {
-max-width: 70vw;
-max-height: 70vh;
+width: 70vw;
+height: 70vh;
 }
 
 #tableContainer table {
