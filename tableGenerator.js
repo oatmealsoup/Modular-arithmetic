@@ -1,5 +1,8 @@
 export function generateTable(limit) {
-	const tableContainer = document.getElementById('tableContainer');
+if (limit > 150) {
+return;
+} else {
+const tableContainer = document.getElementById('tableContainer');
 	
 //Clears tableContainer
 tableContainer.textContent = '';
@@ -62,4 +65,5 @@ const row = document.createElement('tr');
 }
 table.appendChild(fragment);
 tableContainer.appendChild(table);
+}
 }
