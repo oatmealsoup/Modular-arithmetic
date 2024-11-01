@@ -41,7 +41,8 @@ cells[i] = [];
 		if (modulo !== NaN){
 		const natural = Math.abs(modulo);
 		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? 'darkblue' : 'lightblue')};
-		}
+		} else {
+		cells[i][j] = {textContent: NaN, backgroundShade: '', color: ''};	
 		}
 	}
 }
