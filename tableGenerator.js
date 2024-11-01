@@ -9,7 +9,7 @@ const fragment = document.createDocumentFragment();
 const table = document.createElement('table');
 
 
-// A smooth mapping from natural domain [0,limit] to shades.
+// A smooth mapping from natural domain [0, limit] to shades.
 // Allows up to 255 unique shades for the absolute value of the results of the mod function.
 const shadeMap = [];
 for (let i = 0; i <= limit; i++) {
