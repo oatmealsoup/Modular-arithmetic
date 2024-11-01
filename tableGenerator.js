@@ -1,7 +1,4 @@
 export function generateTable(limit) {
-if (limit > 150) {
-return;
-} else {
 const tableContainer = document.getElementById('tableContainer');
 	
 //Clears tableContainer
