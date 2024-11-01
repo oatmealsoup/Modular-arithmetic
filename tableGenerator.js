@@ -44,8 +44,9 @@ cells[i] = [];
 		const natural = Math.abs(modulo);
 		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? 'darkblue' : 'lightblue')};
 		}
-	}
+	}	
 }
+
 	
 // Fills the table, row-by-row, using the 2D array's respective object properties.
 for (let i = 0; i <= 2 * limit + 1; i++) {
@@ -62,4 +63,5 @@ const row = document.createElement('tr');
 }
 table.appendChild(fragment);
 tableContainer.appendChild(table);
+}
 }
