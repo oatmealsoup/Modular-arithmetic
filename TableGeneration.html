@@ -9,16 +9,17 @@
 	<label for="limit">Table limit:</label>
 	<input type="number" id="limit" min="1" max="150">
 	</div>
-	
+	<button id="generate">Generate table</button>
 	<p>Generate tables of modular arithmetic with shading of absolute values.
-	Hold ctrl and press - until you zoom out to see the pattern. 
+	Hold ctrl and press - until you zoom out to see the pattern.
+	The format is column index modulo row index.
 	Keep your memory and processing power in mind when scrolling and zooming for large limits, as (2(limit)+2)^2 cells with as many shades as the limit are rendered.
 	Limits over 100 can crash, so the input is capped at 150 for now. 
 	50 is a good starting point, 100 is my sweet spot, and 150 is appealing if you are careful and considerate with your use of the mouse and keyboard.
 	I have looked at 255, which is gorgeous, but I am trying to prevent browser crashes for unaware users. Lower values have similar appeal.  
 	</p>
 	
-	<button id="generate">Generate table</button>
+	
 	<div id="tableContainer"></div>	
 	<script type="module" src="userInteraction.js"></script>
 </body>
