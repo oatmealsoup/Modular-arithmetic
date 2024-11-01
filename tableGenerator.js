@@ -30,7 +30,7 @@
 				const cellStyle = {};
 				cellStyle.backgroundColor = shadeMap[natural];
 				cellStyle.color = natural > limit / 2 ? 'darkblue' : 'lightblue';	
-			cells[i][j] = {value, style: cellStyle};
+				cells[i][j] = {value, style: cellStyle};
 			}
 	}
 	
