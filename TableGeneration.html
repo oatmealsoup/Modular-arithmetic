@@ -7,14 +7,12 @@
 <body>
 	<div id="controls">
 	<label for="limit">Table limit:</label>
-	<input type="number" id="limit" min="1" max="150">
+	<input type="number" id="limit" min="1" max="100">
 	</div>
 	
 	<p>Generate tables of modular arithmetic with shading. 
 	Hold ctrl and press - until you zoom out to see the pattern. 
-	Limits over 100 can crash, so be careful! 
-	100 is a bit slow, but worth a look. 
-	Work in progress...</p>
+	Limits over 100 can crash, so it is capped for now...</p>
 	
 <button id="generate">Generate table</button>
 <div id="tableContainer"></div>
