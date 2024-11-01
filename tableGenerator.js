@@ -25,18 +25,18 @@ for (let i = 0; i <= 2 * limit + 1; i++) {
 cells[i] = [];
 	for (let j = 0; j <= 2 * limit + 1; j++) {
 		//Adjusting the indices in a variables makes properties and their calculations concise, introducing integers to the array.
-		//Again, the indices must be flipped to make the index row and column, requiring exchange of the modulo function's inputs.
+		//Again, the indices must be flipped to make the index row and column, requiring exchange of the modulo function's indice inputs for readability when the flip is implemented.
 		const adjustedI = j - limit - 1; 
 		const adjustedJ = i - limit - 1;
 		
 		//Index cells are created for i === 0 || j === 0, with i === 0 && j === 0 containing the string "mod".
 		if (i === 0 && j === 0){
-		cells[i][j] = {textContent: "mod", backgroundShade: '', color: '', className: "bold-text"}
+		cells[i][j] = {textContent: "mod", backgroundShade: '', color: '', className: "bold-text"};
 		} else if (i === 0) {
-		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"}
+		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"};
 		} else if (j === 0) {
-		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
-		} else if (j === limit + 2 && i !== 0 ) {
+		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"};
+		} else if (j === limit + 1 && i !== 0 ) {
 		cells[i][j] = {textContent: NaN, backgroundShade: '', color: 'black', className: "bold-text"}
 		// Non-index cells use a function to calculate column modulo row, have a shade propery based on the absolute value, and use two colors for contrasting shades.
 		} else if (j !== limit + 2 && i > 0) {
