@@ -19,23 +19,24 @@ for (let i = 0; i <= limit; i++) {
 	}
 
 // 2D array of objects with string and style properties for filling the table, with adjusted indices for integer domain -limit to limit. 
-// Rows are i, and columns are j, where we want i modulo j for all rows i and columns j.
+//The column and row values must be used vice versa to generate indices, so we calculate i modulo j to get column modulo row.
 const cells = [];
 for (let i = 0; i <= 2 * limit + 1; i++) {
 cells[i] = [];
 	for (let j = 0; j <= 2 * limit + 1; j++) {
 			
 		//Adjusting the indices in a variables makes properties and their calculations concise, introducing integers to the array.
-		const adjustedI = i - limit - 1; 
-		const adjustedJ = j - limit - 1;
+		//Again, the indices must be flipped to make the index row and column, requiring exchange of the modulo function's inputs.
+		const adjustedI = j - limit - 1; 
+		const adjustedJ = i - limit - 1;
 		
 		//Index cells are created for i === 0 || j === 0, with i === 0 && j === 0 containing the string "mod".
 		if (i === 0 && j === 0){
 		cells[i][j] = {textContent: "mod"};
 		} else if (i === 0){
-		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
-		} else if (j === 0) {
 		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"}
+		} else if (j === 0) {
+		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
 		
 		// Non-index cells use a function to calculate i modulo j, have a shade propery based on the absolute value, and use two colors for contrasting shades.
 		} else if (i > 0 && j > 0) {
