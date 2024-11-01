@@ -9,8 +9,8 @@ const fragment = document.createDocumentFragment();
 const table = document.createElement('table');
 
 
-// A smooth mapping from natural domain [0, limit] to shades.
-// Allows up to 255 unique shades for the absolute value of the results of the mod function.
+// A smooth mapping from the natural domain [0, limit] to shades.
+// Allows up to 255 unique shades for the absolute value of the results of the modulo function over [-limit, limit].
 const shadeMap = [];
 for (let i = 0; i <= limit; i++) {
 	const ratio = i / limit;
@@ -19,14 +19,14 @@ for (let i = 0; i <= limit; i++) {
 	}
 
 // 2D array of objects with string and style properties for filling the table, with adjusted indices for integer domain -limit to limit. 
-// Rows are i, and columns are j, where we want j mod i for all rows i and columns j.
+// Rows are i, and columns are j, where we want j modulo i for all rows i and columns j.
 const cells = [];
 for (let i = 0; i <= 2 * limit + 1; i++) {
 cells[i] = [];
 	for (let j = 0; j <= 2 * limit + 1; j++) {
 			
-		//Adjusting the indices in a variables makes properties and their calculations concise
-		//They must be flipped for use as an indices and for a clean definition of modulo.
+		//Adjusting the indices in a variables makes properties and their calculations concise, while introducing integers to the array.
+		//They must be flipped for use as indices and for a clean definition of modulo.
 		const adjustedJ = i - limit - 1; 
 		const adjustedI = j - limit - 1;
 		
@@ -38,16 +38,16 @@ cells[i] = [];
 		} else if (j === 0) {
 		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
 		
-		//Non-index cells use a function to calculate j modulo i, have a shade propery based on the absolute value, and use two colors for contrasting shades.
+		// Non-index cells use a function to calculate j modulo i, have a shade propery based on the absolute value, and use two colors for contrasting shades.
 		} else if (i > 0 && j > 0) {
-		const mod = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
-		const natural = Math.abs(mod);
-		cells[i][j] = {textContent: mod, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? "darkblue" : "lightblue")};
+		const modulo = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
+		const natural = Math.abs(modulo);
+		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? "darkblue" : "lightblue")};
 		}
 	}
 }
 	
-// Fills the table, row-by-row, using the 2D cell array's respective object properties.
+// Fills the table, row-by-row, using the 2D array's respective object properties.
 for (let i = 0; i <= 2 * limit + 1; i++) {
 const row = document.createElement('tr');
 	for (let j = 0; j <= 2 * limit + 1; j++) {
