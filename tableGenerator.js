@@ -31,8 +31,8 @@ cells[i] = [];
 		
 		//Index cells are created for i === 0 || j === 0, with i === 0 && j === 0 containing the string "mod".
 		if (i === 0 && j === 0){
-		cells[i][j] = {textContent: "mod"}
-		} else if (i === 0){
+		cells[i][j] = {textContent: "mod", backgroundShade: '', color: '', className: "bold-text"}
+		} else if (i === 0) {
 		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"}
 		} else if (j === 0) {
 		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
