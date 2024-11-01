@@ -40,7 +40,7 @@ cells[i] = [];
 		else if (j === limit + 1){
 		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
 		// Non-index cells use a function to calculate column modulo row, have a shade propery based on the absolute value, and use two colors for contrasting shades.
-		} else {
+		} else if (i > 0 && j > 0) {
 		const modulo = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
 		const natural = Math.abs(modulo);
 		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? "darkblue" : "lightblue")};
