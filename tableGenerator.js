@@ -14,6 +14,7 @@
 		const shadeValue = Math.round(normalized * 255);
 		shadeMap[i] = `rgb(${shadeValue}, ${shadeValue}, ${shadeValue})`;
 	}
+	
 	// Store table content and style in 2D array
 	const cells = [];
 	for (let i = 0; i <= 2 * limit + 1; i++) {
