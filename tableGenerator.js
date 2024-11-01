@@ -31,14 +31,14 @@ cells[i] = [];
 		const adjustedJ = i - limit - 1;
 		
 		//Index cells are created for i === 0 || j === 0, with i === 0 && j === 0 containing the string "mod".
-		if (i = 0 && j = 0){
+		if (i === 0 && j === 0){
 		cells[i][j] = {textContent: "mod"};
-		} else if (i = 0){
-		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"}
-		} else if (j = 0) {
-		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"}
-		} else if (j = limit + 2 %% i!=0 ) {
-		cells[i][j] = {textContent: NaN, backgroundShade: '', color: 'black', className: "bold-text"}
+		} else if (i === 0){
+		cells[i][j] = {textContent: adjustedI, backgroundShade: '', color: '', className: "bold-text"};
+		} else if (j === 0) {
+		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"};
+		} else if (j === limit + 2 %% i! === 0 ) {
+		cells[i][j] = {textContent: NaN, backgroundShade: '', color: 'black', className: "bold-text"};
 		// Non-index cells use a function to calculate column modulo row, have a shade propery based on the absolute value, and use two colors for contrasting shades.
 		} else {
 		const modulo = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
