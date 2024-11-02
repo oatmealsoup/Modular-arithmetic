@@ -60,4 +60,3 @@ const row = document.createElement('tr');
 table.appendChild(fragment);
 tableContainer.appendChild(table);
 }
-}
