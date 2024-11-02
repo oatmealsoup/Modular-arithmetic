@@ -37,6 +37,7 @@ cells[i] = [];
 		} else if (j === 0) {
 		cells[i][j] = {textContent: adjustedJ, backgroundShade: '', color: '', className: "bold-text"};
 		} else {
+		const modulo = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
 		const natural = Math.abs(modulo);
 		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? 'darkblue' : 'lightblue'), className: ''};
 		}
