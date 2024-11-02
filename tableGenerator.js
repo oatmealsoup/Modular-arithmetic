@@ -25,7 +25,6 @@ for (let i = 0; i <= 2 * limit + 1; i++) {
 cells[i] = [];
 	for (let j = 0; j <= 2 * limit + 1; j++) {
 		//Adjusting the indices in a variables makes properties and their calculations concise, introducing integers to the array.
-		//Again, the indices must be flipped to make the index row and column, requiring exchange of the modulo function's indice inputs for readability and consistency.
 		const adjustedI = j - limit - 1; 
 		const adjustedJ = i - limit - 1;
 		
