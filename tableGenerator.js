@@ -39,7 +39,7 @@ cells[i] = [];
 		} else {
 		const modulo = adjustedJ - (adjustedI * Math.floor(adjustedJ / adjustedI));
 		if (isNaN(modulo)){
-		cells[i][j] = {textContent: NaN, backgroundShade: '', color: 'black', className: 'bold-text'};
+		cells[i][j] = {textContent: "NaN", backgroundShade: '', color: 'black', className: 'bold-text'};
 		} else {
 		const natural = Math.abs(modulo);
 		cells[i][j] = {textContent: modulo, backgroundShade: shadeMap[natural], color: (natural > limit / 2 ? 'darkblue' : 'lightblue'), className: ''};
