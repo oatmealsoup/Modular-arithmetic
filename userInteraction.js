@@ -6,7 +6,3 @@ generate.addEventListener('click', () => {
   if (limit < 151) {generateTable(limit);}
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  document.documentElement.style.scrollBehavior = 'auto';
-});
-
